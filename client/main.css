@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+
+md-toolbar.main {
+  background: #455A64;
+}
+
+md-toolbar.todolist {
+  background: #37474F;
+}
