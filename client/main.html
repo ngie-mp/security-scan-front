@@ -6,10 +6,8 @@
 </head>
 <body ng-app="scanApp">
   <div layout="row">
-    <div flex="33">
-      <side-nav></side-nav>
-    </div>
-    <div class="container" flex="100">
+    <side-nav></side-nav>
+    <div class="container" flex="100" layout="column">
       <md-toolbar class="md-tall main">
           <h1 class="md-toolbar-tools">PHP projects security scan
             {{pagetitle}}</h1>

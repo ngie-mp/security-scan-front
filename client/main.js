@@ -25,6 +25,10 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/list', {
       templateUrl: 'client/pages/list.html',
       controller: 'homeController'
+    })
+    .when('/login', {
+      templateUrl: 'client/pages/login.html',
+      controller: 'homeController'
     });
     $routeProvider.otherwise('/');
 });

@@ -1,4 +1,13 @@
-<md-sidenav class="md-sidenav-left" md-component-id="left"  md-is-locked-open="$mdMedia">
+<md-button ng-click="toggleLeft()" class="md-raised">Toggle Sidenav</md-button><br>
+<md-button href="/home" class="md-raised">
+    home
+</md-button><br>
+<md-button href="/list" class="md-raised">
+    List
+</md-button>
+<md-button href="/login">login</md-button>
+<md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop md-whiteframe="4">
   <md-content layout-margin>
     <md-button href="/home" class="md-raised">
         home
