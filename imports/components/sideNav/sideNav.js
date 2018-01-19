@@ -3,17 +3,8 @@ import angularMeteor from 'angular-meteor';
 import template from './sideNav.html';
 
 class sideNavCtrl {
-  constructor($mdSidenav, $timeout) {
+  constructor() {
 
-    this.pagetitle = 'home page';
-    this.toggleLeft = buildToggler('left');
-    this.toggleRight = buildToggler('right');
-
-    function buildToggler(componentId) {
-      return function() {
-        $mdSidenav(componentId).toggle();
-      };
-    }
   }
 }
 
@@ -22,5 +13,5 @@ export default angular.module('sideNav', [
 ])
   .component('sideNav', {
     templateUrl: 'imports/components/sideNav/sideNav.html',
-    controller: ['$scope', sideNavCtrl]
+    controller: sideNavCtrl
   });
