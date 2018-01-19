@@ -37,11 +37,12 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav) {
   $scope.pagetitle = 'home page';
 
   $scope.toggleLeft = buildToggler('left');
-    $scope.toggleRight = buildToggler('right');
+  $scope.toggleRight = buildToggler('right');
 
     function buildToggler(componentId) {
       return function() {
         $mdSidenav(componentId).toggle();
       };
     }
+
 });

@@ -1,9 +1,56 @@
 /* CSS declarations go here */
+body {
+  background: ;
+}
+
+.logo h1{
+  text-align: center;
+  color: #7f8c8d;
+
+}
+.logo i {
+  color: #aedd94;
+  font-size: 2.5em;
+  line-height: 2;
+}
 
 md-toolbar.main {
-  background: #455A64;
+  background: transparent;
 }
 
 md-toolbar.todolist {
   background: #37474F;
+}
+
+.md-button span {
+ display: block;
+ font-size: 0.80em;
+ line-height: 1.5;
+}
+
+.scan-icon img {
+  width: 16%;
+  margin: 0 auto;
+  display: block;
+}
+
+.scan-icon .md-button {
+  margin: 0 auto;
+  display: block;
+  width: 88px;
+  margin: 0 20px;
+}
+
+side-nav {
+  background: #fff;
+}
+
+.side-nav {
+  background: #fff;
+  height: 100vh;
+}
+
+.side-nav .btn {
+  margin: 45px 0;
+  color: #3d8af7;
 }
