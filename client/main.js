@@ -29,7 +29,11 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/login', {
       templateUrl: 'client/pages/login.html',
       controller: 'homeController'
-    });
+    })
+    .when('/settings', {
+      templateUrl: 'client/pages/settings.html',
+      controller: 'homeController'
+    });;
     $routeProvider.otherwise('/');
 });
 
