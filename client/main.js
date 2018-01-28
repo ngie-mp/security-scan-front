@@ -30,10 +30,18 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'client/pages/login.html',
       controller: 'homeController'
     })
+    .when('/contact-list', {
+      templateUrl: 'client/pages/contact-list.html',
+      controller: 'homeController'
+    })
     .when('/settings', {
       templateUrl: 'client/pages/settings.html',
       controller: 'homeController'
-    });;
+    })
+    .when('/project-list', {
+      templateUrl: 'client/pages/project-list.html',
+      controller: 'homeController'
+    });
     $routeProvider.otherwise('/');
 });
 
