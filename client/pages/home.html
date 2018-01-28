@@ -1,10 +1,37 @@
-<div layout="column" layout-align="center center">
-  <md-input-container>
-    <label>Enter your .git project URL</label>
-    <input ng-model="user.title">
-  </md-input-container>
+<div layout="column" class="home">
+  <div layout="row" class="search">
+    <md-select ng-model="user.state" flex="25" class="protocol-select">
+      <md-option value="HTTPS://">
+        https://github.com/
+      </md-option>
+      <md-option value="SSH://">
+        git@github.com:
+      </md-option>
+    </md-select>
+    <md-input-container class="main-input" flex="75" md-no-float>
+      <input ng-model="user.title"
+             placeholder="purifyphp/purifyphp.git">
+    </md-input-container>
+  </div>
+  <div  ng-class="{'visible' : !activated}">
+    <md-progress-linear md-mode-"determenated" value="30"></md-progress-linear>
+    Heles
+  </div>
+
+  <hr ng-class="{'visible' : activated}">
+
+  <div id="loaders" layout="row" layout-align="start center">
+
+    <h5>Off</h5>
+    <md-switch
+        ng-model="activated"
+        ng-change="toggleActivation()"
+        aria-label="Enable Indicators">
+      <h5>On</h5>
+    </md-switch>
+  </div>
   <div class="scan-icon" layout-align="center">
     <img src="icons/scan.svg" alt="Security scan">
   </div>
-  <md-button class="md-primary">Primary Button</md-button>
+  <md-button ng-click="toggleActivation()">Primary Button</md-button>
 </div>

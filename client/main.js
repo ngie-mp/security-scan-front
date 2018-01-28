@@ -45,16 +45,20 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.otherwise('/');
 });
 
-app.controller('homeController', function($scope, $timeout, $mdSidenav) {
+app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval) {
   $scope.pagetitle = 'home page';
+    var self = $scope, j= 0, counter = 0;
 
-  $scope.toggleLeft = buildToggler('left');
-  $scope.toggleRight = buildToggler('right');
+   self.mode = 'query';
+   self.determinateValue = 30;
+   self.determinateValue2 = 30;
 
-    function buildToggler(componentId) {
-      return function() {
-        $mdSidenav(componentId).toggle();
-      };
+
+   /**
+    * Turn off or on the 5 themed loaders
+    */
+   self.toggleActivation = function() {
+        self.showList = [];
+        self.activated = true;
     }
-
 });

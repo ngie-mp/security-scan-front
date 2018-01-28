@@ -8,6 +8,7 @@ body {
   color: #7f8c8d;
 
 }
+
 .logo i {
   color: #aedd94;
   font-size: 2.5em;
@@ -22,6 +23,40 @@ md-toolbar.todolist {
   background: #37474F;
 }
 
+.protocol-select {
+  height: 40px;
+  margin-bottom: 0;
+}
+.search {
+  margin: 2em;
+  margin-bottom: 0;
+}
+.main-input {
+  /*margin: 1.5em;*/
+  border: 1px solid #DDD !important;
+  height: 41px;
+  margin-bottom: 0;
+}
+
+.main-input:focus {
+  /*text-align: center;*/
+}
+.main-input input::placeholder {
+  /*text-align: center;*/
+  padding-left: 0.5em;
+}
+.main-input input:focus {
+  border: none;
+}
+.main-input input {
+  /*width: 80% !important;
+  padding: 1.2em;
+  margin: 0 auto!important;
+  padding: 1em 2em;*/
+  border: 0;
+  margin-bottom: 0;
+}
+
 .md-button span {
  display: block;
  font-size: 0.80em;
@@ -32,13 +67,21 @@ md-toolbar.todolist {
   width: 16%;
   margin: 0 auto;
   display: block;
+  margin-top: 2.5em;
 }
 
-.scan-icon .md-button {
+.home .md-button {
+  background: #3d8af7;
+  width: 80%;
   margin: 0 auto;
-  display: block;
-  width: 88px;
-  margin: 0 20px;
+  color: #FFF;
+  margin-top: 2.5em;
+}
+
+.home md-progress-linear {
+  width: 93%;
+  margin: 0 auto;
+  padding-bottom: 1.5em;
 }
 
 side-nav {
