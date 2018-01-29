@@ -47,18 +47,94 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval) {
   $scope.pagetitle = 'home page';
-    var self = $scope, j= 0, counter = 0;
+  var self = $scope, j= 0, counter = 0;
 
-   self.mode = 'query';
-   self.determinateValue = 30;
-   self.determinateValue2 = 30;
+  self.mode = 'query';
+  self.activated = true;
+  self.determinateValue = 30;
+  self.determinateValue2 = 30;
 
+  self.showList = [ ];
 
    /**
     * Turn off or on the 5 themed loaders
     */
    self.toggleActivation = function() {
-        self.showList = [];
-        self.activated = true;
+       if ( !self.activated ) self.showList = [ ];
+       if (  self.activated ) {
+         j = counter = 0;
+         self.determinateValue = 30;
+         self.determinateValue2 = 30;
+       }
+   };
+
+   $interval(function() {
+     self.determinateValue += 1;
+     self.determinateValue2 += 1.5;
+
+     if (self.determinateValue > 100) self.determinateValue = 30;
+     if (self.determinateValue2 > 100) self.determinateValue2 = 30;
+
+       // Incrementally start animation the five (5) Indeterminate,
+       // themed progress circular bars
+
+       if ( (j < 2) && !self.showList[j] && self.activated ) {
+         self.showList[j] = true;
+       }
+       if ( counter++ % 4 === 0 ) j++;
+
+       // Show the indicator in the "Used within Containers" after 200ms delay
+       if ( j == 2 ) self.contained = "indeterminate";
+
+   }, 100, 0, true);
+
+   $interval(function() {
+     self.mode = (self.mode == 'query' ? 'determinate' : 'query');
+   }, 7200, 0, true);
+
+
+   $scope.tasks = [
+    'Feed the imaginary gold fish.',
+    'Walk the non existant dog.',
+    'Have a celebratory beer!'
+  ];
+
+  $scope.completedTasks = [
+    'Start writing an example AngularJS todo app.',
+    'Add the ability to add new tasks.',
+    'Add the ability to mark tasks as completed.',
+    'Add the ability to undo completed tasks.',
+    'Finish writing an example AngularJS todo app.',
+    'Write my first CodePen.'
+  ];
+
+  $scope.add = function(task) {
+    if ( task == '' || typeof task === 'undefined' ) {
+      return false;
     }
+
+    $scope.tasks.push(task);
+    $scope.newTask = '';
+  };
+
+  $scope.markAsComplete = function(index) {
+    var task = $scope.tasks[index];
+    $scope.tasks.splice(index, 1);
+    $scope.completedTasks.push(task);
+  };
+
+  $scope.markAsIncomplete = function(index) {
+    var task = $scope.completedTasks[index];
+    $scope.completedTasks.splice(index, 1);
+    $scope.tasks.push(task);
+  };
+
+  $scope.getTotalTasks = function() {
+    return $scope.tasks.length + $scope.completedTasks.length;
+  };
+
+  $scope.calculatePercent = function(count) {
+    var total = $scope.getTotalTasks();
+    return Math.round(100 / total * count);
+  };
 });
