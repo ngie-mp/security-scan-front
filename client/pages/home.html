@@ -13,11 +13,10 @@
              placeholder="purifyphp/purifyphp.git">
     </md-input-container>
   </div>
-  <div  ng-class="{'visible' : !activated}">
+  <div ng-class="{'visible' : !activated}">
     <md-progress-linear md-mode="query" ng-disabled="!showList[1]"></md-progress-linear>
-    sds
   </div>
-
+  <md-button ng-click="toggleActivation()">Primary Button</md-button>
   <hr ng-class="{'visible' : activated}">
 
   <div id="loaders" layout="row" layout-align="center center">
@@ -31,9 +30,6 @@
     </md-switch>
   </div>
   <div id="scan-tools-list">
-
-    <h1 class="text-center">An example AngularJS todo app</h1>
-
     <div class="task-list">
 
       <h2>Remaining <small>&mdash; {{ tasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(tasks.length) }}%)</small></h2>
@@ -68,13 +64,9 @@
           </a>
         </li>
       </ul>
-
     </div>
-
   </div>
-  <todo-list></todo-list>
-  <div class="scan-icon" layout-align="center">
+  <!-- <div class="scan-icon" layout-align="center">
     <img src="icons/scan.svg" alt="Security scan">
-  </div>
-  <md-button ng-click="toggleActivation()">Primary Button</md-button>
+  </div> -->
 </div>
