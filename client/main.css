@@ -26,10 +26,25 @@ md-toolbar.todolist {
 
 .main-input {
   /*margin: 1.5em;*/
-  border: 1px solid #DDD !important;
-  height: 41px;
+  height: 50px;
   margin-bottom: 0;
-  background: #fafafa; }
+  background: #fafafa;
+  padding: 0; }
+  .main-input .git-logo {
+    background: #1ab188;
+    display: block; }
+    .main-input .git-logo img {
+      display: block;
+      margin: 0 auto;
+      padding-top: 0.5em; }
+  .main-input input {
+    /*width: 80% !important;
+    padding: 1.2em;
+    margin: 0 auto!important;
+    padding: 1em 2em;*/
+    border: 0;
+    margin-bottom: 0;
+    height: auto; }
 
 .main-input:focus {
   /*text-align: center;*/ }
@@ -40,14 +55,6 @@ md-toolbar.todolist {
 
 .main-input input:focus {
   border: none; }
-
-.main-input input {
-  /*width: 80% !important;
-  padding: 1.2em;
-  margin: 0 auto!important;
-  padding: 1em 2em;*/
-  border: 0;
-  margin-bottom: 0; }
 
 .md-button span {
   display: block;
@@ -61,16 +68,18 @@ md-toolbar.todolist {
   margin-top: 2.5em; }
 
 .home .md-button {
-  background: #3d8af7;
+  background: #1ab188;
   width: 80%;
   margin: 0 auto;
   color: #FFF;
   margin-top: 2.5em; }
-
 .home md-progress-linear {
-  width: 93%;
   margin: 0 auto;
   padding-bottom: 1.5em; }
+  .home md-progress-linear .md-container {
+    background: #6d6d6d; }
+  .home md-progress-linear .md-bar {
+    background-color: #1ab188; }
 
 side-nav {
   background: #1ab188; }
@@ -84,58 +93,55 @@ side-nav {
   color: #dff1f5; }
 
 /* Scan list */
-ul {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0; }
-
-.form-control {
-  border-color: #E1E1E1; }
-
-.task-list {
-  margin-bottom: 45px; }
-
-.task,
-.completed-task {
-  position: relative; }
-  .task a,
-  .completed-task a {
-    bottom: 0;
-    color: #EEE;
-    display: block;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 40px; }
-    .task a:hover,
-    .completed-task a:hover {
-      color: #75B51B;
-      cursor: pointer; }
-    .task a i,
-    .completed-task a i {
-      height: 20px;
-      line-height: 20px;
-      margin-top: -10px;
+.scan-tools-list {
+  padding: 2em; }
+  .scan-tools-list ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0; }
+  .scan-tools-list .form-control {
+    border-color: #E1E1E1; }
+  .scan-tools-list .task-list {
+    margin-bottom: 45px; }
+  .scan-tools-list .task,
+  .scan-tools-list .completed-task {
+    position: relative; }
+    .scan-tools-list .task a,
+    .scan-tools-list .completed-task a {
+      bottom: 0;
+      color: #EEE;
+      display: block;
       position: absolute;
-      right: 10px;
-      top: 50%;
-      width: 20px; }
-
-.task {
-  background-color: #FFF;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  margin: 0 0 5px;
-  padding: 10px 55px 10px 15px; }
-
-.completed-task {
-  color: #999;
-  font-size: 13px;
-  text-decoration: line-through; }
-  .completed-task a {
-    color: #DDD; }
-    .completed-task a:hover {
-      color: #D6563A; }
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: 40px; }
+      .scan-tools-list .task a:hover,
+      .scan-tools-list .completed-task a:hover {
+        color: #75B51B;
+        cursor: pointer; }
+      .scan-tools-list .task a i,
+      .scan-tools-list .completed-task a i {
+        height: 20px;
+        line-height: 20px;
+        margin-top: -10px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        width: 20px; }
+  .scan-tools-list .task {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 0 5px;
+    padding: 10px 55px 10px 15px; }
+  .scan-tools-list .completed-task {
+    color: #999;
+    font-size: 13px;
+    text-decoration: line-through; }
+    .scan-tools-list .completed-task a {
+      color: #DDD; }
+      .scan-tools-list .completed-task a:hover {
+        color: #D6563A; }
 
 /*# sourceMappingURL=main.css.map */

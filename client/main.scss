@@ -41,10 +41,28 @@ md-toolbar.todolist {
 }
 .main-input {
   /*margin: 1.5em;*/
-  border: 1px solid #DDD !important;
-  height: 41px;
+  height: 50px;
   margin-bottom: 0;
   background: $main-light;
+  padding: 0;
+  .git-logo {
+    background: $primary;
+    display: block;
+    img {
+      display: block;
+      margin: 0 auto;
+      padding-top: 0.5em;
+    }
+  }
+  input {
+   /*width: 80% !important;
+   padding: 1.2em;
+   margin: 0 auto!important;
+   padding: 1em 2em;*/
+   border: 0;
+   margin-bottom: 0;
+   height: auto;
+ }
 }
 
 .main-input:focus {
@@ -57,40 +75,40 @@ md-toolbar.todolist {
 .main-input input:focus {
   border: none;
 }
-.main-input input {
-  /*width: 80% !important;
-  padding: 1.2em;
-  margin: 0 auto!important;
-  padding: 1em 2em;*/
-  border: 0;
-  margin-bottom: 0;
-}
-
 .md-button span {
  display: block;
  font-size: 0.80em;
  line-height: 1.5;
 }
 
-.scan-icon img {
-  width: 10%;
-  margin: 0 auto;
-  display: block;
-  margin-top: 2.5em;
+.scan-icon {
+  img {
+    width: 10%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2.5em;
+  }
 }
 
-.home .md-button {
-  background: #3d8af7;
-  width: 80%;
-  margin: 0 auto;
-  color: #FFF;
-  margin-top: 2.5em;
-}
-
-.home md-progress-linear {
-  width: 93%;
-  margin: 0 auto;
-  padding-bottom: 1.5em;
+.home {
+  .md-button {
+    background: $primary;
+    width: 80%;
+    margin: 0 auto;
+    color: #FFF;
+    margin-top: 2.5em;
+  }
+  md-progress-linear {
+   //width: 93%;
+   margin: 0 auto;
+   padding-bottom: 1.5em;
+   .md-container {
+     background: #6d6d6d;
+   }
+   .md-bar {
+     background-color: rgb(26, 177, 136);
+   }
+ }
 }
 
 side-nav {
@@ -110,69 +128,69 @@ side-nav {
 
 /* Scan list */
 
-ul {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0;
-}
+.scan-tools-list {
+  padding: 2em;
+  ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+  .form-control {
+    border-color: #E1E1E1;
+  }
+  .task-list {
+    margin-bottom: 45px;
+  }
+  .task,
+  .completed-task {
+    position: relative;
 
-.form-control {
-  border-color: #E1E1E1;
-}
-
-.task-list {
-  margin-bottom: 45px;
-}
-
-.task,
-.completed-task {
-  position: relative;
-
-  a {
-    bottom: 0;
-    color: #EEE;
-    display: block;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 40px;
-
-    &:hover {
-      color: #75B51B;
-      cursor: pointer;
-    }
-
-    i {
-      height: 20px;
-      line-height: 20px;
-      margin-top: -10px;
+    a {
+      bottom: 0;
+      color: #EEE;
+      display: block;
       position: absolute;
-      right: 10px;
-      top: 50%;
-      width: 20px;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: 40px;
+
+      &:hover {
+        color: #75B51B;
+        cursor: pointer;
+      }
+
+      i {
+        height: 20px;
+        line-height: 20px;
+        margin-top: -10px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        width: 20px;
+      }
     }
   }
-}
 
-.task {
-  background-color: #FFF;
-  border-radius: $borderRadius;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  margin: 0 0 5px;
-  padding: 10px 55px 10px 15px;
-}
+  .task {
+    background-color: #FFF;
+    border-radius: $borderRadius;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 0 5px;
+    padding: 10px 55px 10px 15px;
+  }
 
-.completed-task {
-  color: #999;
-  font-size: 13px;
-  text-decoration: line-through;
+  .completed-task {
+    color: #999;
+    font-size: 13px;
+    text-decoration: line-through;
 
-  a {
-    color: #DDD;
+    a {
+      color: #DDD;
 
-    &:hover {
-      color: #D6563A;
+      &:hover {
+        color: #D6563A;
+      }
     }
   }
 }

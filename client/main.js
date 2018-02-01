@@ -94,18 +94,16 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
 
 
    $scope.tasks = [
-    'Feed the imaginary gold fish.',
-    'Walk the non existant dog.',
-    'Have a celebratory beer!'
+    'Bugs finders: PHP-malware-finder'
   ];
 
   $scope.completedTasks = [
-    'Start writing an example AngularJS todo app.',
-    'Add the ability to add new tasks.',
-    'Add the ability to mark tasks as completed.',
-    'Add the ability to undo completed tasks.',
-    'Finish writing an example AngularJS todo app.',
-    'Write my first CodePen.'
+    'AppChecker',
+    'Code insight',
+    'Exakat ',
+    'PHP Analysis',
+    'PHPCodeFixer',
+    'PHP Code Static Analysis '
   ];
 
   $scope.add = function(task) {
