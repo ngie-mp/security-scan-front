@@ -32,7 +32,7 @@
   <div id="scan-tools-list">
     <div class="task-list">
 
-      <h2>Remaining <small>&mdash; {{ tasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(tasks.length) }}%)</small></h2>
+      <h2>Tests remaining <small>&mdash; {{ tasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(tasks.length) }}%)</small></h2>
 
       <ul>
         <li ng-repeat="task in tasks" class="task">{{ task }}<a ng-click="markAsComplete($index)">
@@ -53,7 +53,7 @@
 
     <div class="task-list">
 
-      <h2>Completed
+      <h2>Tests Completed
         <small>&mdash; {{ completedTasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(completedTasks.length) }}%)</small>
       </h2>
 

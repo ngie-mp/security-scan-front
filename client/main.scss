@@ -1,19 +1,25 @@
-/* CSS declarations go here */
 $borderRadius: 5px;
+$main-background: #24323d;
+$main-light: #fafafa;
+$alert-background: #C2185B;
+$primary: #1ab188;
+$default: #435259;
+$text-default: #8b989e;
+$text-primary: #dff1f5;
+$text-highlight: $primary;
 
 body {
-  background: #fafafa;
+  background: $main-background;
 }
 
 .logo h1{
   text-align: center;
-  color: #7f8c8d;
-
+  color: $text-primary;
 }
 
-.logo i {
-  color: #aedd94;
-  font-size: 2.5em;
+i.logo {
+  color: $text-primary;
+  font-size: 4.5em;
   line-height: 2;
 }
 
@@ -38,6 +44,7 @@ md-toolbar.todolist {
   border: 1px solid #DDD !important;
   height: 41px;
   margin-bottom: 0;
+  background: $main-light;
 }
 
 .main-input:focus {
@@ -87,17 +94,17 @@ md-toolbar.todolist {
 }
 
 side-nav {
-  background: #fff;
+  background: $primary;
 }
 
 .side-nav {
-  background: #fff;
+  background: $primary;
   height: 100vh;
 }
 
 .side-nav .btn {
   margin: 45px 0;
-  color: #3d8af7;
+  color: $text-primary;
 }
 
 
