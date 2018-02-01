@@ -45,7 +45,7 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.otherwise('/');
 });
 
-app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval) {
+app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http) {
   $scope.pagetitle = 'home page';
   var self = $scope, j= 0, counter = 0;
 
@@ -135,4 +135,32 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
     var total = $scope.getTotalTasks();
     return Math.round(100 / total * count);
   };
+
+  $scope.getRepository = function () {
+       $http({
+           method: 'POST',
+           url: '127.0.0.1/api/urltest',
+           data: $scope.repository
+       }).then(function successCallback(response) {
+           console.log(response);
+           console.log($scope.repository);
+
+       }, function errorCallback(response) {
+          console.log($scope.repository);
+
+       });
+   };
+
+   $scope.raw_url; //the binding
+   $scope.customMode = false;
+   $scope.passData = function passData(){
+   $http.post('127.0.0.1/api/urltest', {url: $scope.raw_url})
+   .then(function(succes) {
+     console.log($scope.raw_url);
+     
+    })
+    .then(function() {
+      console.log();
+      });
+    }
 });

@@ -6,7 +6,7 @@
              alt="PHP security scan"
              flex="20">
       </span>
-      <input ng-model="user.title"
+      <input ng-model="raw_url"
              placeholder="purifyphp/purifyphp.git"
              flex="80">
     </md-input-container>
@@ -14,18 +14,17 @@
       <md-progress-linear md-mode="query" ng-disabled="!showList[1]" flex="100"></md-progress-linear>
     </div>
   </div>
-
-  <md-button ng-click="toggleActivation()">Go and Scan</md-button>
+  <md-button ng-click="passData()">Go and Scan</md-button>
   <hr ng-class="{'visible' : activated}">
 
   <div id="loaders" layout="row" layout-align="center center">
-    <span>Off</span>
+    <!-- <span>Off</span>
     <md-switch
         ng-model="activated"
         ng-change="toggleActivation()"
         aria-label="Enable Indicators">
       <span>On</span>
-    </md-switch>
+    </md-switch> -->
   </div>
   <div class="scan-tools-list">
     <div class="task-list">
@@ -39,15 +38,11 @@
         </a>
         </li>
       </ul>
-
-      <!-- <form ng-submit="add(newTask)">
-
+      <form ng-submit="add(newTask)">
         <div class="form-group">
           <input ng-model="newTask" type="text" class="form-control" placeholder="Type new task and hit enter">
         </div>
-
-      </form> -->
-
+      </form>
     </div>
 
     <div class="task-list">

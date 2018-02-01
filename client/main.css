@@ -54,7 +54,6 @@ md-toolbar.todolist {
   text-align: center; }
 
 .main-input input::placeholder {
-  text-align: center;
   padding-left: 0.5em; }
 
 .main-input input:focus {
