@@ -1,4 +1,4 @@
-$borderRadius: 5px;
+$main-border-radius: 5px;
 $main-background: #24323d;
 $main-light: #fafafa;
 $alert-background: #C2185B;
@@ -41,6 +41,7 @@ md-toolbar.todolist {
 }
 .main-input {
   /*margin: 1.5em;*/
+  border-radius: $main-border-radius;
   height: 50px;
   margin-bottom: 0;
   background: $main-light;
@@ -48,6 +49,8 @@ md-toolbar.todolist {
   .git-logo {
     background: $primary;
     display: block;
+    border-top-left-radius: $main-border-radius;
+    border-bottom-left-radius: $main-border-radius;
     img {
       display: block;
       margin: 0 auto;
@@ -59,21 +62,22 @@ md-toolbar.todolist {
    padding: 1.2em;
    margin: 0 auto!important;
    padding: 1em 2em;*/
-   border: 0;
    margin-bottom: 0;
-   height: auto;
+   height: 50px;
+   border: 0;
+   border-style: none;
  }
 }
 
 .main-input:focus {
-  /*text-align: center;*/
+  text-align: center;
 }
 .main-input input::placeholder {
-  /*text-align: center;*/
+  text-align: center;
   padding-left: 0.5em;
 }
 .main-input input:focus {
-  border: none;
+  border: none !important;
 }
 .md-button span {
  display: block;
@@ -109,6 +113,7 @@ md-toolbar.todolist {
      background-color: rgb(26, 177, 136);
    }
  }
+
 }
 
 side-nav {
@@ -174,7 +179,7 @@ side-nav {
 
   .task {
     background-color: #FFF;
-    border-radius: $borderRadius;
+    border-radius: $main-border-radius;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     margin: 0 0 5px;
     padding: 10px 55px 10px 15px;

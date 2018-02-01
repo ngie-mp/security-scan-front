@@ -26,13 +26,16 @@ md-toolbar.todolist {
 
 .main-input {
   /*margin: 1.5em;*/
+  border-radius: 5px;
   height: 50px;
   margin-bottom: 0;
   background: #fafafa;
   padding: 0; }
   .main-input .git-logo {
     background: #1ab188;
-    display: block; }
+    display: block;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
     .main-input .git-logo img {
       display: block;
       margin: 0 auto;
@@ -42,19 +45,20 @@ md-toolbar.todolist {
     padding: 1.2em;
     margin: 0 auto!important;
     padding: 1em 2em;*/
-    border: 0;
     margin-bottom: 0;
-    height: auto; }
+    height: 50px;
+    border: 0;
+    border-style: none; }
 
 .main-input:focus {
-  /*text-align: center;*/ }
+  text-align: center; }
 
 .main-input input::placeholder {
-  /*text-align: center;*/
+  text-align: center;
   padding-left: 0.5em; }
 
 .main-input input:focus {
-  border: none; }
+  border: none !important; }
 
 .md-button span {
   display: block;

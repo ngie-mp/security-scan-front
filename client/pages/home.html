@@ -2,7 +2,9 @@
   <div layout="column" class="search">
     <md-input-container class="main-input" md-no-float layout="row">
       <span class="git-logo" flex="20" layout-align="center center">
-        <img src="icons/github-big-logo.svg" alt="PHP security scan" flex="20">
+        <img src="icons/github-big-logo.svg"
+             alt="PHP security scan"
+             flex="20">
       </span>
       <input ng-model="user.title"
              placeholder="purifyphp/purifyphp.git"
@@ -13,11 +15,10 @@
     </div>
   </div>
 
-  <md-button ng-click="toggleActivation()">Primary Button</md-button>
+  <md-button ng-click="toggleActivation()">Go and Scan</md-button>
   <hr ng-class="{'visible' : activated}">
 
   <div id="loaders" layout="row" layout-align="center center">
-
     <span>Off</span>
     <md-switch
         ng-model="activated"
@@ -28,9 +29,10 @@
   </div>
   <div class="scan-tools-list">
     <div class="task-list">
-
-      <h2>Tests remaining <small>&mdash; {{ tasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(tasks.length) }}%)</small></h2>
-
+      <h2>Tests remaining  {{ tasks.length }} /
+        {{ getTotalTasks() }}
+        ({{ calculatePercent(tasks.length) }}%)
+      </h2>
       <ul>
         <li ng-repeat="task in tasks" class="task"><i class="material-icons">bug_report</i>{{ task }}<a ng-click="markAsComplete($index)">
           <i class="material-icons">done</i>
@@ -49,11 +51,9 @@
     </div>
 
     <div class="task-list">
-
       <h2>Tests Completed
-        <small>&mdash; {{ completedTasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(completedTasks.length) }}%)</small>
+        <small> {{ completedTasks.length }} / {{ getTotalTasks() }} ({{ calculatePercent(completedTasks.length) }}%)</small>
       </h2>
-
       <ul>
         <li ng-repeat="task in completedTasks" class="completed-task">{{ task }}
           <a ng-click="markAsIncomplete($index)">
@@ -63,7 +63,4 @@
       </ul>
     </div>
   </div>
-  <!-- <div class="scan-icon" layout-align="center">
-    <img src="icons/scan.svg" alt="Security scan">
-  </div> -->
 </div>
