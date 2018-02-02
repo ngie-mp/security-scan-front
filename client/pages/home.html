@@ -1,31 +1,25 @@
 <div layout="column" class="home">
   <div layout="column" class="search">
-    <md-input-container class="main-input" md-no-float layout="row">
+    <md-input-container class="main-input"
+                        md-no-float
+                        layout="row">
       <span class="git-logo" flex="20" layout-align="center center">
         <img src="icons/github-big-logo.svg"
              alt="PHP security scan"
              flex="20">
       </span>
-      <input ng-model="raw_url"
+      <input ng-model="git_url"
              placeholder="purifyphp/purifyphp.git"
              flex="80">
     </md-input-container>
-    <div ng-class="{'visible' : !activated}">
-      <md-progress-linear md-mode="query" ng-disabled="!showList[1]" flex="100"></md-progress-linear>
+    <div>
+      <md-progress-linear md-mode="determinated"  ng-disabled="!showLoader"></md-progress-linear>
+      <div ng-if="showStatus">
+        Project... is {{ modal }}
+      </div>
     </div>
   </div>
-  <md-button ng-click="passData()">Go and Scan</md-button>
-  <hr ng-class="{'visible' : activated}">
-
-  <div id="loaders" layout="row" layout-align="center center">
-    <!-- <span>Off</span>
-    <md-switch
-        ng-model="activated"
-        ng-change="toggleActivation()"
-        aria-label="Enable Indicators">
-      <span>On</span>
-    </md-switch> -->
-  </div>
+  <md-button ng-click="sendGitUrl()" >Go and Scan</md-button>
   <div class="scan-tools-list">
     <div class="task-list">
       <h2>Tests remaining  {{ tasks.length }} /
@@ -33,16 +27,18 @@
         ({{ calculatePercent(tasks.length) }}%)
       </h2>
       <ul>
-        <li ng-repeat="task in tasks" class="task"><i class="material-icons">bug_report</i>{{ task }}<a ng-click="markAsComplete($index)">
+        <li ng-repeat="task in tasks" class="task"><i class="material-icons">bug_report</i>
+          {{ task }}
+          <a ng-click="markAsComplete($index)">
           <i class="material-icons">done</i>
         </a>
         </li>
       </ul>
-      <form ng-submit="add(newTask)">
+      <!-- <form ng-submit="add(newTask)">
         <div class="form-group">
           <input ng-model="newTask" type="text" class="form-control" placeholder="Type new task and hit enter">
         </div>
-      </form>
+      </form> -->
     </div>
 
     <div class="task-list">

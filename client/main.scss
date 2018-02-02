@@ -42,8 +42,10 @@ md-toolbar.todolist {
 .main-input {
   /*margin: 1.5em;*/
   border-radius: $main-border-radius;
+  width: 60%;
   height: 50px;
   margin-bottom: 0;
+  margin: 0 auto;
   background: $main-light;
   padding: 0;
   .git-logo {
@@ -63,9 +65,12 @@ md-toolbar.todolist {
    margin: 0 auto!important;
    padding: 1em 2em;*/
    margin-bottom: 0;
-   height: 50px;
+   height: 60px !important;
    border: 0;
    border-style: none;
+   border-width: 0 !important;
+   border-color: white;
+
  }
 }
 
@@ -96,13 +101,13 @@ md-toolbar.todolist {
 .home {
   .md-button {
     background: $primary;
-    width: 80%;
+    width: 25%;
     margin: 0 auto;
     color: #FFF;
     margin-top: 2.5em;
   }
   md-progress-linear {
-   //width: 93%;
+   width: 60%;
    margin: 0 auto;
    padding-bottom: 1.5em;
    .md-container {
@@ -133,7 +138,7 @@ side-nav {
 /* Scan list */
 
 .scan-tools-list {
-  padding: 2em;
+  padding: 3em;
   ul {
     list-style: none;
     margin: 0 0 20px;

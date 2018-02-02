@@ -47,53 +47,10 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http) {
   $scope.pagetitle = 'home page';
-  var self = $scope, j= 0, counter = 0;
+  $scope.showLoader = false;
+  $scope.showStatus = false;
 
-  self.mode = 'query';
-  self.activated = true;
-  self.determinateValue = 30;
-  self.determinateValue2 = 30;
-
-  self.showList = [ ];
-
-   /**
-    * Turn off or on the 5 themed loaders
-    */
-   self.toggleActivation = function() {
-       if ( !self.activated ) self.showList = [ ];
-       if (  self.activated ) {
-         j = counter = 0;
-         self.determinateValue = 30;
-         self.determinateValue2 = 30;
-       }
-   };
-
-   $interval(function() {
-     self.determinateValue += 1;
-     self.determinateValue2 += 1.5;
-
-     if (self.determinateValue > 100) self.determinateValue = 30;
-     if (self.determinateValue2 > 100) self.determinateValue2 = 30;
-
-       // Incrementally start animation the five (5) Indeterminate,
-       // themed progress circular bars
-
-       if ( (j < 2) && !self.showList[j] && self.activated ) {
-         self.showList[j] = true;
-       }
-       if ( counter++ % 4 === 0 ) j++;
-
-       // Show the indicator in the "Used within Containers" after 200ms delay
-       if ( j == 2 ) self.contained = "indeterminate";
-
-   }, 100, 0, true);
-
-   $interval(function() {
-     self.mode = (self.mode == 'query' ? 'determinate' : 'query');
-   }, 7200, 0, true);
-
-
-   $scope.tasks = [
+  $scope.tasks = [
     'Bugs finders: PHP-malware-finder'
   ];
 
@@ -136,31 +93,29 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
     return Math.round(100 / total * count);
   };
 
-  $scope.getRepository = function () {
-       $http({
-           method: 'POST',
-           url: '127.0.0.1/api/urltest',
-           data: $scope.repository
-       }).then(function successCallback(response) {
-           console.log(response);
-           console.log($scope.repository);
+   $scope.sendGitUrl = function sendGitUrl() {
+     $scope.showLoader = true;
+     $scope.showStatus = false
+     var url = 'http://localhost/api/urltest',
+         data = {
+           "url" : $scope.git_url,
+         },
+         config='contenttype';
+     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
+     .then(function (response) {
+        console.log(response.data.status);
+        console.log(typeof(response.data.status));
+        $scope.showLoader = false;
+        if(response.data.status === "success" ) {
+          $scope.modal = "correct";
+        }
+        else {
+          $scope.modal = "errr";          
+        }
+        console.log(response);
+        $scope.showStatus = true;
 
-       }, function errorCallback(response) {
-          console.log($scope.repository);
-
-       });
-   };
-
-   $scope.raw_url; //the binding
-   $scope.customMode = false;
-   $scope.passData = function passData(){
-   $http.post('127.0.0.1/api/urltest', {url: $scope.raw_url})
-   .then(function(succes) {
-     console.log($scope.raw_url);
-     
-    })
-    .then(function() {
-      console.log();
+       }, function (response) {
       });
-    }
+     }
 });
