@@ -29,7 +29,7 @@
         ({{ calculatePercent(tasks.length) }}%)
       </h2>
       <ul>
-        <li ng-repeat="task in tasks" class="task"><i class="material-icons">bug_report</i>
+        <li ng-repeat="task in tasks" class="task"><i class="material-icons bug">bug_report</i>
           {{ task }}
           <a ng-click="markAsComplete($index)">
           <i class="material-icons">done</i>
