@@ -14,10 +14,10 @@
                flex="80">
       </md-input-container>
       <md-progress-linear md-mode="determinated"  ng-disabled="!showLoader"></md-progress-linear>
-      <div>
-        <div ng-if="showStatus">
+      <div class="status" ng-if="showStatus">
+        <span>
           Your project... is {{ projectStatus }}
-        </div>
+        </span>
       </div>
     </div>
     <md-button ng-click="sendGitUrl()" flex="20">Go and Scan</md-button>

@@ -146,7 +146,13 @@ side-nav {
   color: $text-primary;
 }
 
+.status{
+  span{
+    color: $text-default;
+    font-size: 1.2em;
+  }
 
+}
 /* Scan list */
 
 .scan-tools-list {

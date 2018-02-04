@@ -110,6 +110,10 @@ side-nav {
   margin: 45px 0;
   color: #1ab188; }
 
+.status span {
+  color: #8b989e;
+  font-size: 1.2em; }
+
 /* Scan list */
 .scan-tools-list {
   padding: 2.5em; }
