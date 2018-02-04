@@ -1,26 +1,35 @@
 $main-border-radius: 5px;
-$main-background: #24323d;
+$main-background: #fafafa;
 $main-light: #fafafa;
 $alert-background: #C2185B;
 $primary: #1ab188;
 $default: #435259;
 $text-default: #8b989e;
-$text-primary: #dff1f5;
+$text-primary: #1ab188;
 $text-highlight: $primary;
 
 body {
   background: $main-background;
+  height: auto !important;
 }
 
+.menu-button {
+  margin: 2em;
+  i {
+    color: $primary;
+  }
+}
 .logo h1{
   text-align: center;
   color: $text-primary;
+  font-weight: 100;
 }
 
 i.logo {
   color: $text-primary;
   font-size: 4.5em;
   line-height: 2;
+
 }
 
 md-toolbar.main {
@@ -37,22 +46,24 @@ md-toolbar.todolist {
 }
 .search {
   margin: 2em;
+  padding: 1.5em;
   margin-bottom: 0;
 }
 .main-input {
   /*margin: 1.5em;*/
-  border-radius: $main-border-radius;
-  width: 60%;
+  /*border-radius: $main-border-radius;*/
+  width: 100%;
   height: 50px;
   margin-bottom: 0;
   margin: 0 auto;
   background: $main-light;
   padding: 0;
+  border: 1px solid $primary;
   .git-logo {
     background: $primary;
     display: block;
-    border-top-left-radius: $main-border-radius;
-    border-bottom-left-radius: $main-border-radius;
+    /*border-top-left-radius: $main-border-radius;
+    border-bottom-left-radius: $main-border-radius;*/
     img {
       display: block;
       margin: 0 auto;
@@ -101,13 +112,14 @@ md-toolbar.todolist {
 .home {
   .md-button {
     background: $primary;
-    width: 25%;
-    margin: 0 auto;
     color: #FFF;
-    margin-top: 2.5em;
+    margin: 0;
+    margin-left: 0.5em;
+    border-radius: 0px;
+    height: 50px;
   }
   md-progress-linear {
-   width: 60%;
+   width: 100%;
    margin: 0 auto;
    padding-bottom: 1.5em;
    .md-container {
@@ -138,7 +150,7 @@ side-nav {
 /* Scan list */
 
 .scan-tools-list {
-  padding: 3em;
+  padding: 2.5em;
   ul {
     list-style: none;
     margin: 0 0 20px;
@@ -149,6 +161,10 @@ side-nav {
   }
   .task-list {
     margin-bottom: 45px;
+    h2 {
+      color: $primary;
+      font-weight: 200;
+    }
   }
   .task,
   .completed-task {
@@ -183,7 +199,7 @@ side-nav {
 
   .task {
     background-color: #FFF;
-    border-radius: $main-border-radius;
+    /*border-radius: $main-border-radius;*/
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     margin: 0 0 5px;
     padding: 10px 55px 10px 15px;

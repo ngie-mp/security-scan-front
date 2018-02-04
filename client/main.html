@@ -7,16 +7,15 @@
 </head>
 <body ng-app="scanApp">
   <div layout="row">
-    <!-- <div class="menu">
-      <a href="/"><i class="material-icons">menu</i></a>
-    </div> -->
-    <side-nav md-whiteframe="4"></side-nav>
+    <div class="menu-button">
+      <a href="/"><i class="material-icons">menu</i>
+      </a>
+    </div>
+    <!-- <side-nav md-whiteframe="4"></side-nav> -->
     <div class="container" flex="100" layout="column">
       <md-toolbar class="md-tall main logo">
         <span class="logo" layout="row" layout-align="center">
-          <h1><i class="material-icons">security</i>
-            Security scan
-          <i class="material-icons">security</i></h1>
+          <h1>Security scan</h1>
         </span>
       </md-toolbar>
       <div ng-view></div>

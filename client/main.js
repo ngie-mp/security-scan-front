@@ -46,6 +46,15 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http) {
+  $scope.toggleLeft = buildToggler('left');
+  $scope.toggleRight = buildToggler('right');
+
+  function buildToggler(componentId) {
+    return function() {
+      $mdSidenav(componentId).toggle();
+    };
+  }
+
   $scope.pagetitle = 'home page';
   $scope.showLoader = false;
   $scope.showStatus = false;
@@ -95,7 +104,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
 
    $scope.sendGitUrl = function sendGitUrl() {
      $scope.showLoader = true;
-     $scope.showStatus = false
+     $scope.showStatus = true;
      var url = 'http://localhost/api/urltest',
          data = {
            "url" : $scope.git_url,
@@ -107,10 +116,10 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
         console.log(typeof(response.data.status));
         $scope.showLoader = false;
         if(response.data.status === "success" ) {
-          $scope.modal = "correct";
+          $scope.projectStatus = "cloning into our servers";
         }
         else {
-          $scope.modal = "errr";          
+          $scope.modal = "not a git repository :(";
         }
         console.log(response);
         $scope.showStatus = true;
