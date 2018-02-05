@@ -45,7 +45,7 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.otherwise('/');
 });
 
-app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http) {
+app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http, $mdDialog) {
   var url;
 
   $scope.toggleLeft = buildToggler('left');
@@ -55,6 +55,14 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
       $mdSidenav(componentId).toggle();
    };
   }
+  $scope.showDonateMethod = function(ev) {
+    $mdDialog.show({
+      contentElement: '#donate',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose: true
+    });
+  };
 
   $scope.testType = 'the test type name here';
   $scope.showLoader = false;
@@ -121,5 +129,4 @@ app.directive('collapse',[function(){
       }
     }
   }
-
 }]);
