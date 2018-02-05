@@ -157,84 +157,24 @@ side-nav {
   }
 
 }
-/* Scan list */
-
-.scan-tools-list {
-  padding: 3em;
-
-  .bug {
-    color: #B22900;
+/* collapser */
+.collapser {
+  background: $main-background;
+  margin: 0.2em 3.5em;
+  .title {
+    padding: 1em 0.8em;
+    border: 1px $primary solid;
   }
-  ul {
-    list-style: none;
-    margin: 0 0 20px;
-    padding: 0;
-  }
-  .form-control {
-    border-color: #E1E1E1;
-  }
-  .task-list {
-    margin-bottom: 45px;
-    h2 {
-      color: $primary;
-      font-weight: 200;
-    }
-  }
-  .task,
-  .completed-task {
-    position: relative;
-
-    a {
-      bottom: 0;
-      color: #EEE;
-      display: block;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      width: 40px;
-
-      &:hover {
-        color: #75B51B;
-        cursor: pointer;
-      }
-
-      i {
-        height: 20px;
-        line-height: 20px;
-        margin-top: -10px;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        width: 20px;
-      }
-    }
-  }
-
-  .task {
-    background-color: #FFF;
-    /*border-radius: $main-border-radius;*/
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-    margin: 0 0 5px;
-    padding: 10px 55px 10px 15px;
-  }
-
-  .completed-task {
-    color: #999;
-    font-size: 13px;
-    text-decoration: line-through;
-
-    a {
-      color: #DDD;
-
-      &:hover {
-        color: #D6563A;
-      }
+  .collapse-content{
+    overflow:hidden;
+    transition:0.4s all;
+    background: #151515;
+    color: $text-default;
+    .content {
+      padding: 1em;
     }
   }
 }
-
-
 @keyframes moving{
   0%{
      transform: translateX(-240px);

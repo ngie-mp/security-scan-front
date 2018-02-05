@@ -55,76 +55,68 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
    };
   }
 
-  $scope.pagetitle = 'home page';
+  $scope.testType = 'the test type name here';
   $scope.showLoader = false;
   $scope.showStatus = false;
 
-  $scope.tasks = [
-    'Bugs finders: PHP-malware-finder'
-  ];
+  $scope.sendGitUrl = function sendGitUrl() {
+   $scope.showLoader = true;
+   $scope.showStatus = true;
+   var url = 'http://localhost/api/urltest',
+       data = {
+         "url" : $scope.git_url,
+       },
+       config='contenttype';
+   $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
+   .then(function (response) {
+      console.log(response.data.status);
+      console.log(typeof(response.data.status));
+      $scope.showLoader = false;
+      if(response.data.status === "success" ) {
+        $scope.projectStatus = "cloning into our servers";
+      }
+      else {
+        $scope.modal = "not a git repository :(";
+      }
+      console.log(response);
+      $scope.showStatus = true;
 
-  $scope.completedTasks = [
-    'AppChecker',
-    'Code insight',
-    'Exakat ',
-    'PHP Analysis',
-    'PHPCodeFixer',
-    'PHP Code Static Analysis '
-  ];
-
-  $scope.add = function(task) {
-    if ( task == '' || typeof task === 'undefined' ) {
-      return false;
-    }
-
-    $scope.tasks.push(task);
-    $scope.newTask = '';
-  };
-
-  $scope.markAsComplete = function(index) {
-    var task = $scope.tasks[index];
-    $scope.tasks.splice(index, 1);
-    $scope.completedTasks.push(task);
-  };
-
-  $scope.markAsIncomplete = function(index) {
-    var task = $scope.completedTasks[index];
-    $scope.completedTasks.splice(index, 1);
-    $scope.tasks.push(task);
-  };
-
-  $scope.getTotalTasks = function() {
-    return $scope.tasks.length + $scope.completedTasks.length;
-  };
-
-  $scope.calculatePercent = function(count) {
-    var total = $scope.getTotalTasks();
-    return Math.round(100 / total * count);
-  };
-
-   $scope.sendGitUrl = function sendGitUrl() {
-     $scope.showLoader = true;
-     $scope.showStatus = true;
-     var url = 'http://localhost/api/urltest',
-         data = {
-           "url" : $scope.git_url,
-         },
-         config='contenttype';
-     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
-     .then(function (response) {
-        console.log(response.data.status);
-        console.log(typeof(response.data.status));
-        $scope.showLoader = false;
-        if(response.data.status === "success" ) {
-          $scope.projectStatus = "cloning into our servers";
-        }
-        else {
-          $scope.modal = "not a git repository :(";
-        }
-        console.log(response);
-        $scope.showStatus = true;
-
-       }, function (response) {
-      });
-     }
+     }, function (response) {
+    });
+   }
 });
+
+
+app.directive('collapse',[function(){
+  return{
+    restrict: 'E',
+    scope : {
+      title: '@',
+      isOpen : '='
+    },
+    transclude: true,
+    template : '<div class="collapser"><div ng-click="collapse()" class="title">{{title}}</div>'+
+    '<div class="collapse-content"><div class="content" ng-transclude></div></div><div>',
+    link: function(scope, element, attrs){
+      var isOpen = scope.isOpen ? true : false;
+      var collapse_content_div = element[0].getElementsByClassName('collapse-content');
+      var collapse_content_height = collapse_content_div[0].clientHeight;
+      if(isOpen){
+        collapse_content_div[0].style.height = 0;
+      }else{
+        collapse_content_div[0].style.height = collapse_content_height+"px";
+      }
+      scope.collapse = function(){
+        if(isOpen){
+          collapse_content_div[0].style.height = collapse_content_height+"px";
+          isOpen = false;
+
+        }else{
+          collapse_content_div[0].style.height = 0;
+           isOpen = true;
+        }
+      }
+    }
+  }
+
+}]);
