@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #fafbfc;
   height: auto !important; }
 
 .menu-button {
@@ -12,8 +12,10 @@ body {
 .donate-button {
   margin: 2em 0;
   cursor: pointer;
-  color: #1ab188;
-  text-align: right; }
+  color: #D4D4D4;
+  text-align: right;
+  font-weight: 100;
+  font-style: italic; }
   .donate-button i {
     color: #1ab188;
     font-size: 1.8em;
@@ -23,17 +25,18 @@ body {
     top: 25%; }
 
 .logo h1 {
-  color: #1ab188;
+  color: #fff;
   font-weight: 100;
   text-align: center;
-  font-size: 2em; }
+  font-size: 2em;
+  margin-top: 0.8em; }
 
 i.logo {
   color: #1ab188;
   line-height: 2; }
 
 md-toolbar.main {
-  background: transparent;
+  background: #3c4146;
   border-bottom: 1px solid #D4D4D4;
   padding: 0 1em;
   height: 120px; }
@@ -101,32 +104,45 @@ md-toolbar.todolist {
   display: block;
   margin-top: 2.5em; }
 
-.home .md-button {
-  background: #1ab188;
-  color: #FFF;
-  margin: 0;
-  margin-left: 0.5em;
-  border-radius: 0px;
-  height: 50px; }
-.home md-progress-linear {
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 1.5em; }
-  .home md-progress-linear .md-container {
-    background: #6d6d6d; }
-  .home md-progress-linear .md-bar {
-    background-color: #1ab188; }
+.home {
+  padding: 2em 8em; }
+  .home .md-button {
+    background: #1ab188;
+    color: #FFF;
+    margin: 0;
+    margin-left: 0.5em;
+    border-radius: 0px;
+    height: 50px; }
+  .home md-progress-linear {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 1.5em; }
+    .home md-progress-linear .md-container {
+      background: #6d6d6d; }
+    .home md-progress-linear .md-bar {
+      background-color: #1ab188; }
 
-side-nav {
-  background: #1ab188; }
-
-.side-nav {
-  background: #1ab188;
-  height: 100vh; }
-
-.side-nav .btn {
-  margin: 45px 0;
-  color: #1ab188; }
+md-sidenav {
+  max-width: 140px !important; }
+  md-sidenav .side-nav .close-btn {
+    width: 140px;
+    border-bottom: 1px #d4d4d4 solid;
+    margin: 1.5em 0;
+    padding-bottom: 0.5em; }
+    md-sidenav .side-nav .close-btn:hover {
+      background: transparent;
+      color: #333; }
+    md-sidenav .side-nav .close-btn i {
+      color: #3c4146; }
+  md-sidenav .side-nav .btn {
+    margin: 45px 0;
+    color: #8b989e;
+    display: block; }
+    md-sidenav .side-nav .btn:hover {
+      background: transparent;
+      color: #1ab188; }
+    md-sidenav .side-nav .btn i:hover {
+      color: #1ab188; }
 
 .status span {
   color: #8b989e;
@@ -134,7 +150,7 @@ side-nav {
 
 /* collapser */
 .collapser {
-  background: #fafafa;
+  background: #fafbfc;
   margin: 0.2em 3.5em; }
   .collapser .title {
     padding: 1em 0.8em;
@@ -142,7 +158,7 @@ side-nav {
   .collapser .collapse-content {
     overflow: hidden;
     transition: 0.4s all;
-    background: #151515;
+    background: #24292e;
     color: #8b989e; }
     .collapser .collapse-content .content {
       padding: 1em; }

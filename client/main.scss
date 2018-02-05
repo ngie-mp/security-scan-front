@@ -1,5 +1,5 @@
 $main-border-radius: 5px;
-$main-background: #fafafa;
+$main-background: #fafbfc;
 $main-light: #fafafa;
 $alert-background: #C2185B;
 $primary: #1ab188;
@@ -24,8 +24,10 @@ body {
 .donate-button {
   margin: 2em 0;
   cursor: pointer;
-  color:  $primary;
+  color:  #D4D4D4;
   text-align: right;
+  font-weight: 100;
+  font-style: italic;
   i {
     color: $primary;
     font-size: 1.8em;
@@ -36,10 +38,11 @@ body {
   }
 }
 .logo h1{
-  color: $text-primary;
+  color: #fff;
   font-weight: 100;
   text-align: center;
   font-size: 2em;
+  margin-top: 0.8em;
 }
 
 i.logo {
@@ -48,7 +51,7 @@ i.logo {
 }
 
 md-toolbar.main {
-  background: transparent;
+  background: #3c4146;
   border-bottom: 1px solid #D4D4D4;
   padding: 0 1em;
   height: 120px;
@@ -128,6 +131,7 @@ md-toolbar.todolist {
 }
 
 .home {
+  padding: 2em 8em;
   .md-button {
     background: $primary;
     color: #FFF;
@@ -150,20 +154,38 @@ md-toolbar.todolist {
 
 }
 
-side-nav {
-  background: $primary;
+md-sidenav {
+  max-width: 140px !important;
+  .side-nav {
+    .close-btn {
+      width: 140px;
+      border-bottom: 1px #d4d4d4 solid;
+      margin:1.5em 0;
+      padding-bottom: 0.5em;
+      &:hover {
+        background: transparent;
+        color: #333;
+      }
+      i {
+        color: #3c4146;
+      }
+    }
+    .btn {
+      margin: 45px 0;
+      color: $text-default;
+      display: block;
+      &:hover {
+        background: transparent;
+        color: $primary;
+      }
+      i {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
 }
-
-.side-nav {
-  background: $primary;
-  height: 100vh;
-}
-
-.side-nav .btn {
-  margin: 45px 0;
-  color: $text-primary;
-}
-
 .status{
   span{
     color: $text-default;
@@ -182,7 +204,7 @@ side-nav {
   .collapse-content{
     overflow:hidden;
     transition:0.4s all;
-    background: #151515;
+    background: #24292e;
     color: $text-default;
     .content {
       padding: 1em;

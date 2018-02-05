@@ -62,7 +62,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
   $scope.sendGitUrl = function sendGitUrl() {
    $scope.showLoader = true;
    $scope.showStatus = true;
-   var url = 'http://localhost/api/urltest',
+   var url = 'http://localhost/api/process',
        data = {
          "url" : $scope.git_url,
        },
@@ -72,11 +72,16 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
       console.log(response.data.status);
       console.log(typeof(response.data.status));
       $scope.showLoader = false;
-      if(response.data.status === "success" ) {
-        $scope.projectStatus = "cloning into our servers";
+      if(response.status === 200 ) {
+        if(response.data.status === "success") {
+            $scope.projectStatus = "cloning into our servers";
+        }
+        else {
+          $scope.modal = "not a git repository :(";
+        }
       }
       else {
-        $scope.modal = "not a git repository :(";
+        console.log("error");
       }
       console.log(response);
       $scope.showStatus = true;
@@ -95,8 +100,9 @@ app.directive('collapse',[function(){
       isOpen : '='
     },
     transclude: true,
-    template : '<div class="collapser"><div ng-click="collapse()" class="title">{{title}}</div>'+
-    '<div class="collapse-content"><div class="content" ng-transclude></div></div><div>',
+    template : '<div class="collapser"><div ng-click="collapse()" class="title">'+
+    '{{title}}</div><div class="collapse-content">'+
+    '<div class="content" ng-transclude></div></div><div>',
     link: function(scope, element, attrs){
       var isOpen = scope.isOpen ? true : false;
       var collapse_content_div = element[0].getElementsByClassName('collapse-content');
