@@ -21,6 +21,20 @@ body {
     font-size: 1.8em;
   }
 }
+.donate-button {
+  margin: 2em 0;
+  cursor: pointer;
+  color:  $primary;
+  text-align: right;
+  i {
+    color: $primary;
+    font-size: 1.8em;
+    height: 20px;
+		line-height: 20px;
+		position: relative;
+		top: 25%;
+  }
+}
 .logo h1{
   color: $text-primary;
   font-weight: 100;

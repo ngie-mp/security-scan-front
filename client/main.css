@@ -9,6 +9,19 @@ body {
     color: #1ab188;
     font-size: 1.8em; }
 
+.donate-button {
+  margin: 2em 0;
+  cursor: pointer;
+  color: #1ab188;
+  text-align: right; }
+  .donate-button i {
+    color: #1ab188;
+    font-size: 1.8em;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    top: 25%; }
+
 .logo h1 {
   color: #1ab188;
   font-weight: 100;
