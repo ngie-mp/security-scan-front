@@ -188,12 +188,26 @@ md-toolbar.todolist {
 }
 
 /* collapser */
+.error {
+  i {color: #E83A5E;}
+}
+.warning {
+  i {color: #E8850C;}
+}
+.succes {
+  i {color: #00B233;}
+}
 .collapser {
   background: $main-background;
   margin: 0.2em 3.5em;
   .title {
     padding: 1em 0.8em;
     border: 1px $primary solid;
+	  i {
+		line-height: 20px;
+    float: right;
+    margin-right: 0.5em;
+	  }
   }
   .collapse-content{
     overflow:hidden;

@@ -46,8 +46,9 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http) {
+  var url;
+
   $scope.toggleLeft = buildToggler('left');
-  $scope.toggleRight = buildToggler('right');
 
   function buildToggler(componentId) {
     return function() {
@@ -60,15 +61,13 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
   $scope.showStatus = false;
 
   $scope.sendGitUrl = function sendGitUrl() {
-   $scope.showLoader = true;
-   $scope.showStatus = true;
-   var url = 'http://localhost/api/process',
-       data = {
-         "url" : $scope.git_url,
-       },
-       config='contenttype';
-   $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
-   .then(function (response) {
+    $scope.showLoader = true;
+    $scope.showStatus = true;
+    url = 'http://localhost/api/process', data = { "url" : $scope.git_url, },
+        config='contenttype';
+
+    $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
+     .then(function (response) {
       console.log(response.data.status);
       console.log(typeof(response.data.status));
       $scope.showLoader = false;
@@ -85,9 +84,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
       }
       console.log(response);
       $scope.showStatus = true;
-
-     }, function (response) {
-    });
+     }, function (response) {});
    }
 });
 
@@ -100,8 +97,8 @@ app.directive('collapse',[function(){
       isOpen : '='
     },
     transclude: true,
-    template : '<div class="collapser"><div ng-click="collapse()" class="title">'+
-    '{{title}}</div><div class="collapse-content">'+
+    template : '<div><div ng-click="collapse()" class="title">'+
+    '{{title}}<i class="material-icons">brightness_1</i></div><div class="collapse-content">'+
     '<div class="content" ng-transclude></div></div><div>',
     link: function(scope, element, attrs){
       var isOpen = scope.isOpen ? true : false;
