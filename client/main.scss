@@ -14,7 +14,7 @@ body {
 }
 
 .menu-button {
-  margin: 2em;
+  margin: 2em 0;
   cursor: pointer;
   i {
     color: $primary;
@@ -22,21 +22,22 @@ body {
   }
 }
 .logo h1{
-  text-align: center;
   color: $text-primary;
   font-weight: 100;
   text-align: center;
+  font-size: 2em;
 }
 
 i.logo {
   color: $text-primary;
-  font-size: 4.5em;
   line-height: 2;
-
 }
 
 md-toolbar.main {
   background: transparent;
+  border-bottom: 1px solid #D4D4D4;
+  padding: 0 1em;
+  height: 120px;
 }
 
 md-toolbar.todolist {
@@ -159,7 +160,7 @@ side-nav {
 /* Scan list */
 
 .scan-tools-list {
-  padding: 2.5em;
+  padding: 3em;
 
   .bug {
     color: #B22900;

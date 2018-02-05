@@ -3,25 +3,27 @@ body {
   height: auto !important; }
 
 .menu-button {
-  margin: 2em;
+  margin: 2em 0;
   cursor: pointer; }
   .menu-button i {
     color: #1ab188;
     font-size: 1.8em; }
 
 .logo h1 {
-  text-align: center;
   color: #1ab188;
   font-weight: 100;
-  text-align: center; }
+  text-align: center;
+  font-size: 2em; }
 
 i.logo {
   color: #1ab188;
-  font-size: 4.5em;
   line-height: 2; }
 
 md-toolbar.main {
-  background: transparent; }
+  background: transparent;
+  border-bottom: 1px solid #D4D4D4;
+  padding: 0 1em;
+  height: 120px; }
 
 md-toolbar.todolist {
   background: #37474F; }
@@ -119,7 +121,7 @@ side-nav {
 
 /* Scan list */
 .scan-tools-list {
-  padding: 2.5em; }
+  padding: 3em; }
   .scan-tools-list .bug {
     color: #B22900; }
   .scan-tools-list ul {
