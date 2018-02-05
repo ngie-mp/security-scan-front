@@ -3,14 +3,17 @@ body {
   height: auto !important; }
 
 .menu-button {
-  margin: 2em; }
+  margin: 2em;
+  cursor: pointer; }
   .menu-button i {
-    color: #1ab188; }
+    color: #1ab188;
+    font-size: 1.8em; }
 
 .logo h1 {
   text-align: center;
   color: #1ab188;
-  font-weight: 100; }
+  font-weight: 100;
+  text-align: center; }
 
 i.logo {
   color: #1ab188;
@@ -170,5 +173,11 @@ side-nav {
       color: #DDD; }
       .scan-tools-list .completed-task a:hover {
         color: #D6563A; }
+
+@keyframes moving {
+  0% {
+    transform: translateX(-240px); }
+  100% {
+    transform: translateX(0); } }
 
 /*# sourceMappingURL=main.css.map */

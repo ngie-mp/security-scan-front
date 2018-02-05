@@ -15,14 +15,17 @@ body {
 
 .menu-button {
   margin: 2em;
+  cursor: pointer;
   i {
     color: $primary;
+    font-size: 1.8em;
   }
 }
 .logo h1{
   text-align: center;
   color: $text-primary;
   font-weight: 100;
+  text-align: center;
 }
 
 i.logo {
@@ -227,5 +230,15 @@ side-nav {
         color: #D6563A;
       }
     }
+  }
+}
+
+
+@keyframes moving{
+  0%{
+     transform: translateX(-240px);
+  }
+  100%{
+     transform: translateX(0);
   }
 }

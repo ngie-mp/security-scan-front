@@ -52,7 +52,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
   function buildToggler(componentId) {
     return function() {
       $mdSidenav(componentId).toggle();
-    };
+   };
   }
 
   $scope.pagetitle = 'home page';

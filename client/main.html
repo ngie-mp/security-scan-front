@@ -6,15 +6,22 @@
   <base href="/">
 </head>
 <body ng-app="scanApp">
-  <div layout="column">
-    <div class="menu-button">
-      <a href="/"><i class="material-icons">menu</i>
-      </a>
-    </div>
+  <div layout="column" ng-controller="homeController">
+      <md-sidenav class="md-sidenav-left" md-component-id="left"
+                  md-disable-backdrop md-whiteframe="4">
+        <md-content layout-margin>
+          <md-button ng-click="toggleLeft()">
+            <i class="material-icons">close</i>
+          </md-button>
+        </md-content>
+      </md-sidenav>
     <!-- <side-nav md-whiteframe="4"></side-nav> -->
     <div class="container" flex="100" layout="column">
-      <md-toolbar class="md-tall main logo">
-        <span class="logo" layout="row" layout-align="center">
+      <md-toolbar class="md-tall main logo" layout="row">
+        <div class="menu-button" flex="10">
+          <a ng-click="toggleLeft()"><i class="material-icons">menu</i></a>
+        </div>
+        <span class="logo" flex="90">
           <h1>Security scan</h1>
         </span>
       </md-toolbar>
