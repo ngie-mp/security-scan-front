@@ -54,8 +54,6 @@ md-toolbar.todolist {
   margin-bottom: 0; }
 
 .main-input {
-  /*margin: 1.5em;*/
-  /*border-radius: $main-border-radius;*/
   width: 100%;
   height: 50px;
   margin-bottom: 0;
@@ -65,18 +63,12 @@ md-toolbar.todolist {
   border: 1px solid #1ab188; }
   .main-input .git-logo {
     background: #1ab188;
-    display: block;
-    /*border-top-left-radius: $main-border-radius;
-    border-bottom-left-radius: $main-border-radius;*/ }
+    display: block; }
     .main-input .git-logo img {
       display: block;
       margin: 0 auto;
       padding-top: 0.5em; }
   .main-input input {
-    /*width: 80% !important;
-    padding: 1.2em;
-    margin: 0 auto!important;
-    padding: 1em 2em;*/
     margin-bottom: 0;
     height: 60px !important;
     border: 0;
@@ -122,26 +114,26 @@ md-toolbar.todolist {
     .home md-progress-linear .md-bar {
       background-color: #1ab188; }
 
-md-sidenav {
+.md-sidenav-left {
   max-width: 140px !important; }
-  md-sidenav .side-nav .close-btn {
+  .md-sidenav-left .side-nav .close-btn {
     width: 140px;
     border-bottom: 1px #d4d4d4 solid;
     margin: 1.5em 0;
     padding-bottom: 0.5em; }
-    md-sidenav .side-nav .close-btn:hover {
+    .md-sidenav-left .side-nav .close-btn:hover {
       background: transparent;
       color: #333; }
-    md-sidenav .side-nav .close-btn i {
+    .md-sidenav-left .side-nav .close-btn i {
       color: #3c4146; }
-  md-sidenav .side-nav .btn {
+  .md-sidenav-left .side-nav .btn {
     margin: 45px 0;
     color: #8b989e;
     display: block; }
-    md-sidenav .side-nav .btn:hover {
+    .md-sidenav-left .side-nav .btn:hover {
       background: transparent;
       color: #1ab188; }
-    md-sidenav .side-nav .btn i:hover {
+    .md-sidenav-left .side-nav .btn i:hover {
       color: #1ab188; }
 
 .status span {
