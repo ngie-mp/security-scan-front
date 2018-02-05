@@ -88,21 +88,23 @@ md-toolbar.todolist {
   display: block;
   margin-top: 2.5em; }
 
-.home .md-button {
-  background: #1ab188;
-  color: #FFF;
-  margin: 0;
-  margin-left: 0.5em;
-  border-radius: 0px;
-  height: 50px; }
-.home md-progress-linear {
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 1.5em; }
-  .home md-progress-linear .md-container {
-    background: #6d6d6d; }
-  .home md-progress-linear .md-bar {
-    background-color: #1ab188; }
+.home {
+  padding: 2em 8em; }
+  .home .md-button {
+    background: #1ab188;
+    color: #FFF;
+    margin: 0;
+    margin-left: 0.5em;
+    border-radius: 0px;
+    height: 50px; }
+  .home md-progress-linear {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 1.5em; }
+    .home md-progress-linear .md-container {
+      background: #6d6d6d; }
+    .home md-progress-linear .md-bar {
+      background-color: #1ab188; }
 
 side-nav {
   background: #1ab188; }
