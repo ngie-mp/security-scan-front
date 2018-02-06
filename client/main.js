@@ -5,11 +5,13 @@ import ngAnimate from 'angular-animate';
 import ngRoute from 'angular-route';
 import todoList from '/imports/components/todoList/todoList.js';
 import sideNav from '/imports/components/sideNav/sideNav.js';
+import ngSanitize from 'angular-sanitize';
 
 var app = angular.module('scanApp', [
   angularMeteor,
   ngMaterial,
   ngRoute,
+  ngSanitize,
   todoList.name,
   sideNav.name
 ]);
@@ -68,7 +70,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
   $scope.showLoader = false;
   $scope.showStatus = false;
 
-  $scope.plugins = [];
+  $scope.plugins = {};
 
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
@@ -84,16 +86,7 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
           $scope.projectStatus = "cloning into our servers";
           console.log(Object.keys(response.data.plugins));
           console.log(response.data.plugins);
-          $scope.plugins = [
-            {
-            testType : 'phpCa',
-            description: 'Blablablabla',
-            indicator : 'error',
-            testResult: '100 errors and plus...',
-            errors: 9
-            }
-
-          ]
+          $scope.plugins = response.data.plugins;
         }
         else {
           $scope.modal = "not a git repository :(";
@@ -124,7 +117,7 @@ app.directive('collapse',[function(){
       var collapse_content_div = element[0].getElementsByClassName('collapse-content');
       var collapse_content_height = collapse_content_div[0].clientHeight;
       if(isOpen){
-        collapse_content_div[0].style.height = 0;
+        // collapse_content_div[0].style.height = 0;
       }else{
         collapse_content_div[0].style.height = collapse_content_height+"px";
       }
@@ -141,3 +134,9 @@ app.directive('collapse',[function(){
     }
   }
 }]);
+
+app.filter('newline', function() {
+  return function(text) {
+    return text.replace('\n\r\n', "<br><br>");
+  };
+});

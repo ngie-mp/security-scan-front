@@ -23,9 +23,10 @@
     <md-button ng-click="sendGitUrl()" flex="20">Go and Scan</md-button>
   </div>
   <div ng-repeat="plugin in plugins">
-   <collapse is-open=true title="{{plugin.testType}}" class="{{plugin.indicator}} collapser">
-      <span>{{plugin.description}}</span>
-      <span>{{plugin.errors}}</span>
+   <collapse is-open=true title="{{plugin.name}}" class="{{plugin.indicator}} collapser">
+      <!-- <span>{{plugin.description}}</span>
+      <span>{{plugin.logFile}}</span> -->
+      <p ng-bind-html="plugin.log"></p>
    </collapse>
   </div>
 </div>
