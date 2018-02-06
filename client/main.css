@@ -180,7 +180,7 @@ md-toolbar.todolist {
     background: #24292e;
     color: #8b989e; }
     .collapser .collapse-content .content {
-      padding: 1em; }
+      margin: 2em; }
 
 .bottom-menu md-bottom-sheet {
   padding: 2em 0.5em;
