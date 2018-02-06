@@ -5,13 +5,11 @@ import ngAnimate from 'angular-animate';
 import ngRoute from 'angular-route';
 import todoList from '/imports/components/todoList/todoList.js';
 import sideNav from '/imports/components/sideNav/sideNav.js';
-import ngSanitize from 'angular-sanitize';
 
 var app = angular.module('scanApp', [
   angularMeteor,
   ngMaterial,
   ngRoute,
-  ngSanitize,
   todoList.name,
   sideNav.name
 ]);
@@ -47,7 +45,10 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.otherwise('/');
 });
 
-app.controller('homeController', function($scope, $timeout, $mdSidenav, $interval, $http, $mdDialog) {
+app.controller('homeController', function($scope,
+  $timeout, $mdSidenav, $interval, $http, $mdDialog,
+  $mdBottomSheet)
+  {
   var url;
 
   $scope.toggleLeft = buildToggler('left');
@@ -65,6 +66,26 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
       clickOutsideToClose: true
     });
   };
+
+
+  $scope.showGridBottomSheet = function() {
+    $scope.alert = '';
+    $mdBottomSheet.show({
+      templateUrl: '/client/templates/bottom-menu.html',
+      controller: 'homeController'
+    }).then(function(clickedItem) {
+      $mdToast.show(
+            $mdToast.simple()
+              .textContent('sd')
+              .position('top right')
+              .hideDelay(1500)
+          );
+    }).catch(function(error) {
+      // User clicked outside or hit escape
+    });
+  };
+
+
 
   $scope.testType = 'the test type name here';
   $scope.showLoader = false;
@@ -117,7 +138,7 @@ app.directive('collapse',[function(){
       var collapse_content_div = element[0].getElementsByClassName('collapse-content');
       var collapse_content_height = collapse_content_div[0].clientHeight;
       if(isOpen){
-        // collapse_content_div[0].style.height = 0;
+        collapse_content_div[0].style.height = 0;
       }else{
         collapse_content_div[0].style.height = collapse_content_height+"px";
       }
