@@ -147,12 +147,12 @@ md-toolbar.todolist {
 .warning i {
   color: #E8850C; }
 
-.succes i {
+.success i {
   color: #00B233; }
 
 .collapser {
   background: #fafbfc;
-  margin: 0.2em 3.5em; }
+  margin: 3.5em 0.2em; }
   .collapser .title {
     padding: 1em 0.8em;
     border: 1px #1ab188 solid; }

@@ -194,12 +194,12 @@ md-toolbar.todolist {
 .warning {
   i {color: #E8850C;}
 }
-.succes {
+.success {
   i {color: #00B233;}
 }
 .collapser {
   background: $main-background;
-  margin: 0.2em 3.5em;
+  margin:  3.5em 0.2em;
   .title {
     padding: 1em 0.8em;
     border: 1px $primary solid;

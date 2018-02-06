@@ -68,6 +68,8 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
   $scope.showLoader = false;
   $scope.showStatus = false;
 
+  $scope.plugins = [];
+
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
     $scope.showStatus = true;
@@ -76,12 +78,22 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
 
     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
      .then(function (response) {
-      console.log(response.data.status);
-      console.log(typeof(response.data.status));
       $scope.showLoader = false;
       if(response.status === 200 ) {
         if(response.data.status === "success") {
-            $scope.projectStatus = "cloning into our servers";
+          $scope.projectStatus = "cloning into our servers";
+          console.log(Object.keys(response.data.plugins));
+          console.log(response.data.plugins);
+          $scope.plugins = [
+            {
+            testType : 'phpCa',
+            description: 'Blablablabla',
+            indicator : 'error',
+            testResult: '100 errors and plus...',
+            errors: 9
+            }
+
+          ]
         }
         else {
           $scope.modal = "not a git repository :(";
@@ -90,7 +102,6 @@ app.controller('homeController', function($scope, $timeout, $mdSidenav, $interva
       else {
         console.log("error");
       }
-      console.log(response);
       $scope.showStatus = true;
      }, function (response) {});
    }
