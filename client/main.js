@@ -28,11 +28,11 @@ app.config(function($routeProvider, $locationProvider) {
     })
     .when('/login', {
       templateUrl: 'client/pages/login.html',
-      controller: 'homeController'
+      controller: 'loginController'
     })
     .when('/contact-list', {
       templateUrl: 'client/pages/contact-list.html',
-      controller: 'homeController'
+      controller: 'contactController'
     })
     .when('/settings', {
       templateUrl: 'client/pages/settings.html',
@@ -40,7 +40,7 @@ app.config(function($routeProvider, $locationProvider) {
     })
     .when('/project-list', {
       templateUrl: 'client/pages/project-list.html',
-      controller: 'homeController'
+      controller: 'projectListController'
     });
     $routeProvider.otherwise('/');
 });
@@ -156,4 +156,17 @@ app.filter('newline', function() {
   return function(text) {
     return text.replace('\n\r\n', "<br><br>");
   };
+});
+
+
+app.controller('contactController', function($scope, $timeout) {
+    $scope.pageTitle = "Contact"
+});
+
+app.controller('projectListController', function($scope, $timeout) {
+    $scope.pageTitle = "Project list"
+});
+
+app.controller('loginController', function($scope, $timeout) {
+    $scope.pageTitle = "User"
 });
