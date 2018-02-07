@@ -165,19 +165,36 @@ md-toolbar.todolist {
 .warning i {
   color: #E8850C; }
 
-.succes i {
+.success i {
   color: #00B233; }
 
 .collapser {
   background: #fafbfc;
   margin: 0.2em 3.5em; }
   .collapser .title {
-    padding: 1em 0.8em;
+    padding: 0.3em 0.8em;
     border: 1px #2980b9 solid; }
+    .collapser .title span {
+      display: block;
+      margin: 1em; }
     .collapser .title i {
       line-height: 20px;
       float: right;
       margin-right: 0.5em; }
+    .collapser .title .md-chips {
+      box-shadow: 0 0; }
+      .collapser .title .md-chips md-chip {
+        float: right;
+        padding: 0 5px; }
+        .collapser .title .md-chips md-chip i {
+          line-height: 33px;
+          margin-left: 0.5em;
+          float: right; }
+        .collapser .title .md-chips md-chip span {
+          line-height: 33px;
+          display: block;
+          float: left;
+          margin: 0 0.2em; }
   .collapser .collapse-content {
     overflow: hidden;
     transition: 0.4s all;
@@ -186,16 +203,19 @@ md-toolbar.todolist {
     .collapser .collapse-content .content {
       margin: 2em; }
 
-.bottom-menu md-bottom-sheet {
-  padding: 2em 0.5em;
-  height: 120px; }
-  .bottom-menu md-bottom-sheet .md-button {
-    height: 90px;
-    padding-top: 10px; }
-  .bottom-menu md-bottom-sheet .md-grid-item-content {
-    height: 90px;
-    padding-top: 10px;
-    display: inline-block; }
+.bottom-menu {
+  overflow: hidden; }
+  .bottom-menu md-bottom-sheet {
+    position: absolute;
+    padding: 0;
+    height: 120px; }
+    .bottom-menu md-bottom-sheet .md-button {
+      height: 90px;
+      padding-top: 10px; }
+    .bottom-menu md-bottom-sheet .md-grid-item-content {
+      height: 90px;
+      padding-top: 10px;
+      display: inline-block; }
 
 .md-dialog-container form {
   padding: 0.5em; }

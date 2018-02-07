@@ -218,20 +218,42 @@ md-toolbar.todolist {
 .warning {
   i {color: #E8850C;}
 }
-.succes {
+.success {
   i {color: #00B233;}
 }
 .collapser {
   background: $main-background;
   margin: 0.2em 3.5em;
   .title {
-    padding: 1em 0.8em;
+    padding: 0.3em 0.8em;
     border: 1px $primary solid;
+    span {
+      display: block;
+      margin: 1em;
+    }
 	  i {
 		line-height: 20px;
     float: right;
     margin-right: 0.5em;
 	  }
+    .md-chips{
+      box-shadow:0 0;
+      md-chip {
+        float: right;
+        padding: 0 5px;
+        i {
+    		line-height: 33px;
+        margin-left: 0.5em;
+        float: right;
+    	  }
+        span {
+          line-height: 33px;
+          display: block;
+          float: left;
+          margin: 0 0.2em;
+        }
+      }
+    }
   }
   .collapse-content{
     overflow:hidden;
@@ -245,8 +267,10 @@ md-toolbar.todolist {
 }
 
 .bottom-menu {
+  overflow: hidden;
   md-bottom-sheet {
-    padding: 2em 0.5em;
+    position: absolute;
+    padding:0;
     height: 120px;
     .md-button {
       height: 90px;
