@@ -1,6 +1,6 @@
 <div layout="column" class="home">
-  <div layout="row" class="search">
-    <div layout="column" flex="80">
+  <div class="search">
+    <div layout="column">
       <md-input-container class="main-input"
                           md-no-float
                           layout="row">
@@ -13,20 +13,32 @@
                placeholder="purifyphp/purifyphp.git"
                flex="80">
       </md-input-container>
+      <md-input-container class="main-input"
+                          md-no-float
+                          layout="row">
+        <span class="git-logo" flex="20" layout-align="center center">
+          <img src="icons/letter-envelope.svg"
+               alt="PHP security scan"
+               flex="20">
+        </span>
+        <input ng-model="user_email"
+               placeholder="blabla@gmail.com"
+               flex="80">
+      </md-input-container>
       <md-progress-linear md-mode="determinated"  ng-disabled="!showLoader"></md-progress-linear>
       <div class="status" ng-if="showStatus">
         <span>
           {{ projectStatus }}
         </span>
       </div>
+      <md-button ng-click="sendGitUrl()">Go and Scan</md-button>
     </div>
-    <md-button ng-click="sendGitUrl()" flex="20">Go and Scan</md-button>
   </div>
   <div ng-repeat="plugin in plugins">
    <collapse is-open=true title="{{plugin.name}}" class="{{plugin.indicator}} collapser">
       <span>{{plugin.description}}</span>
       <span>{{plugin.logFile}}</span>
-      <span>{{plugin.log}}</span>
+      <span>{{plugin.log.totals}}</span>
       <span>{{plugin.id}}</span>
       <p ng-bind-html-unsafe="plugin.log"></p>
    </collapse>

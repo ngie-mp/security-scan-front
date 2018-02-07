@@ -6,7 +6,7 @@ body {
   margin: 1em 0;
   cursor: pointer; }
   .menu-button i {
-    color: #1ab188;
+    color: #2980b9;
     font-size: 1.8em; }
 
 .donate-button {
@@ -18,7 +18,7 @@ body {
   font-style: italic;
   font-size: 0.8em; }
   .donate-button i {
-    color: #1ab188;
+    color: #2980b9;
     font-size: 1.6em;
     height: 20px;
     line-height: 20px;
@@ -68,29 +68,31 @@ md-toolbar.todolist {
   margin: 2em;
   padding: 1.5em;
   margin-bottom: 0; }
-
-.main-input {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 0;
-  margin: 0 auto;
-  background: #fafafa;
-  padding: 0;
-  border: 1px solid #1ab188; }
-  .main-input .git-logo {
-    background: #1ab188;
-    display: block; }
-    .main-input .git-logo img {
-      display: block;
-      margin: 0 auto;
-      padding-top: 0.5em; }
-  .main-input input {
+  .search .status {
+    text-align: center; }
+  .search .main-input {
+    width: 60%;
+    height: 50px;
     margin-bottom: 0;
-    height: 60px !important;
-    border: 0;
-    border-style: none;
-    border-width: 0 !important;
-    border-color: white; }
+    margin-top: 1em;
+    margin: 0.5em auto 0 auto;
+    background: #fafafa;
+    padding: 0;
+    border: 1px solid #2980b9; }
+    .search .main-input .git-logo {
+      background: #2980b9;
+      display: block; }
+      .search .main-input .git-logo img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 0.5em; }
+    .search .main-input input {
+      margin-bottom: 0;
+      height: 60px !important;
+      border: 0;
+      border-style: none;
+      border-width: 0 !important;
+      border-color: white; }
 
 .main-input:focus {
   text-align: center; }
@@ -115,20 +117,20 @@ md-toolbar.todolist {
 .home {
   padding: 2em 8em; }
   .home .md-button {
-    background: #1ab188;
+    background: #2980b9;
     color: #FFF;
-    margin: 0;
-    margin-left: 0.5em;
+    margin: 0 auto;
     border-radius: 0px;
-    height: 50px; }
+    height: 50px;
+    width: 20%; }
   .home md-progress-linear {
-    width: 100%;
+    width: 60%;
     margin: 0 auto;
     padding-bottom: 1.5em; }
     .home md-progress-linear .md-container {
       background: #6d6d6d; }
     .home md-progress-linear .md-bar {
-      background-color: #1ab188; }
+      background-color: rgba(52, 152, 219, 0.8); }
 
 .md-sidenav-left {
   max-width: 140px !important; }
@@ -148,9 +150,9 @@ md-toolbar.todolist {
     display: block; }
     .md-sidenav-left .side-nav .btn:hover {
       background: transparent;
-      color: #1ab188; }
+      color: #2980b9; }
     .md-sidenav-left .side-nav .btn i:hover {
-      color: #1ab188; }
+      color: #2980b9; }
 
 .status span {
   color: #8b989e;
@@ -171,7 +173,7 @@ md-toolbar.todolist {
   margin: 0.2em 3.5em; }
   .collapser .title {
     padding: 1em 0.8em;
-    border: 1px #1ab188 solid; }
+    border: 1px #2980b9 solid; }
     .collapser .title i {
       line-height: 20px;
       float: right;
@@ -182,8 +184,7 @@ md-toolbar.todolist {
     background: #24292e;
     color: #8b989e; }
     .collapser .collapse-content .content {
-      margin: 2em;
-      transition: 0.5s all; }
+      margin: 2em; }
 
 .bottom-menu md-bottom-sheet {
   padding: 2em 0.5em;

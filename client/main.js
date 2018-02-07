@@ -94,7 +94,6 @@ app.controller('homeController', function($scope,
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
     $scope.showStatus = true;
-    $scope.projectStatus = "Checking up if is a git repository..";
 
     url = 'http://localhost/api/process', data = { "url" : $scope.git_url, },
         config='contenttype';
@@ -103,9 +102,10 @@ app.controller('homeController', function($scope,
      .then(function (response) {
       $scope.showLoader = false;
       if(response.data.status === "success" ) {
-        $scope.projectStatus = "Cool! it is, let's clone it and scan it";
+        $scope.projectStatus = "Checking up you git repository..";
         $scope.projectStatus = "Scanned finished";
         $scope.plugins = response.data.plugins;
+        console.log(response.data.plugins)
       }
       else {
         console.log("error");
