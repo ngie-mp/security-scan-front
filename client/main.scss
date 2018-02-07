@@ -58,12 +58,17 @@ body {
   }
 }
 
-.logo h1{
-  color: #fff;
-  font-weight: 100;
-  text-align: center;
-  font-size: 1.7em;
-  margin: 0.4em 0 0 0;
+.logo {
+  a {
+    text-decoration: none;
+  }
+  h1{
+    color: #fff;
+    font-weight: 100;
+    text-align: center;
+    font-size: 1.7em;
+    margin: 0.4em 0 0 0;
+  }
 }
 
 i.logo {
@@ -233,6 +238,7 @@ md-toolbar.todolist {
     color: $text-default;
     .content {
       margin: 2em;
+      transition:0.5s all;
     }
   }
 }
@@ -250,5 +256,14 @@ md-toolbar.todolist {
       padding-top: 10px;
       display: inline-block;
     }
+  }
+}
+
+.md-dialog-container {
+  form {
+    padding: 0.5em;
+  }
+  .paypal {
+    margin-top: 1em;
   }
 }

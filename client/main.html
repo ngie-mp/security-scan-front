@@ -15,27 +15,14 @@
           <a ng-click="toggleLeft()"><i class="material-icons">menu</i></a>
         </div>
         <span class="logo" flex="60">
-          <h1>Security scan</h1>
+          <a href="/"><h1>Security scan</h1></a>
         </span>
         <span class="donate-button" flex="20">
-          <span  ng-click="showDonateMethod($event)"><i class="material-icons">local_atm</i>Want to pay a coffee?</span>
+          <span ng-click="showDonateMethod($event)">
+            <i class="material-icons">local_atm</i>Want to pay a coffee?
+          </span>
         </span>
       </md-toolbar>
-      <div style="visibility: hidden">
-        <div class="md-dialog-container" id="donate">
-          <md-dialog layout-padding>
-            <h2>Inser coin here to donate!</h2>
-            <p>
-              Paypal
-              <img src="public/icons/paypal.png" alt="">
-            </p>
-            <p>
-              Bitcoin
-              <img src="public/icons/bitcoin-logo.png" alt="">
-            </p>
-          </md-dialog>
-        </div>
-      </div>
       <div ng-view></div>
     </div>
   </div>

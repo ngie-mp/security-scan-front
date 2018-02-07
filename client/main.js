@@ -58,12 +58,20 @@ app.controller('homeController', function($scope,
       $mdSidenav(componentId).toggle();
    };
   }
+
+
   $scope.showDonateMethod = function(ev) {
     $mdDialog.show({
-      contentElement: '#donate',
+      controller: 'homeController',
+      templateUrl: 'client/templates/dialog.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose: true
+    })
+    .then(function(answer) {
+      $scope.method = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.method = 'You cancelled the dialog.';
     });
   };
 
@@ -73,48 +81,35 @@ app.controller('homeController', function($scope,
     $mdBottomSheet.show({
       templateUrl: '/client/templates/bottom-menu.html',
       controller: 'homeController'
-    }).then(function(clickedItem) {
-      $mdToast.show(
-            $mdToast.simple()
-              .textContent('sd')
-              .position('top right')
-              .hideDelay(1500)
-          );
+    }).then(function() {
+
     }).catch(function(error) {
-      // User clicked outside or hit escape
     });
   };
 
-
-
-  $scope.testType = 'the test type name here';
   $scope.showLoader = false;
   $scope.showStatus = false;
-
   $scope.plugins = {};
 
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
     $scope.showStatus = true;
+    $scope.projectStatus = "Checking up if is a git repository..";
+
     url = 'http://localhost/api/process', data = { "url" : $scope.git_url, },
         config='contenttype';
 
     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
      .then(function (response) {
       $scope.showLoader = false;
-      if(response.status === 200 ) {
-        if(response.data.status === "success") {
-          $scope.projectStatus = "cloning into our servers";
-          console.log(Object.keys(response.data.plugins));
-          console.log(response.data.plugins);
-          $scope.plugins = response.data.plugins;
-        }
-        else {
-          $scope.modal = "not a git repository :(";
-        }
+      if(response.data.status === "success" ) {
+        $scope.projectStatus = "Cool! it is, let's clone it and scan it";
+        $scope.projectStatus = "Scanned finished";
+        $scope.plugins = response.data.plugins;
       }
       else {
         console.log("error");
+        $scope.projectStatus = "Oh... not a git repository :(";
       }
       $scope.showStatus = true;
      }, function (response) {});
@@ -138,18 +133,18 @@ app.directive('collapse',[function(){
       var collapse_content_div = element[0].getElementsByClassName('collapse-content');
       var collapse_content_height = collapse_content_div[0].clientHeight;
       if(isOpen){
-        collapse_content_div[0].style.height = 0;
+        collapse_content_div[0].style.height = "0";
       }else{
-        collapse_content_div[0].style.height = collapse_content_height+"px";
+        collapse_content_div[0].style.height = "100%";
       }
       scope.collapse = function(){
         if(isOpen){
-          collapse_content_div[0].style.height = collapse_content_height+"px";
+          collapse_content_div[0].style.height = "0";
           isOpen = false;
 
         }else{
-          collapse_content_div[0].style.height = 0;
-           isOpen = true;
+          collapse_content_div[0].style.height = "100%";
+          isOpen = true;
         }
       }
     }

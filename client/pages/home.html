@@ -16,7 +16,7 @@
       <md-progress-linear md-mode="determinated"  ng-disabled="!showLoader"></md-progress-linear>
       <div class="status" ng-if="showStatus">
         <span>
-          Your project... is {{ projectStatus }}
+          {{ projectStatus }}
         </span>
       </div>
     </div>
@@ -24,10 +24,11 @@
   </div>
   <div ng-repeat="plugin in plugins">
    <collapse is-open=true title="{{plugin.name}}" class="{{plugin.indicator}} collapser">
-      <!-- <span>{{plugin.description}}</span>
-      <span>{{plugin.logFile}}</span> -->
-
-      <p ng-bind-html="plugin.log"></p>
+      <span>{{plugin.description}}</span>
+      <span>{{plugin.logFile}}</span>
+      <span>{{plugin.log}}</span>
+      <span>{{plugin.id}}</span>
+      <p ng-bind-html-unsafe="plugin.log"></p>
    </collapse>
   </div>
   <a class="more-btn md-fab md-raised" ng-click="showGridBottomSheet()">
