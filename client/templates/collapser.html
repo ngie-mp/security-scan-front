@@ -1,0 +1,22 @@
+<div>
+<div ng-click="collapse()" class="title" layout="row">
+  <span flex="60">{{title}}</span>
+  <md-chips class="indicators" flex="40">
+     <md-chip class="warning">
+       <i class="material-icons">brightness_1</i>
+       <span>0</span>
+     </md-chip>
+     <md-chip class="error">
+       <i class="material-icons">brightness_1</i>
+       <span>0</span>
+     </md-chip>
+     <md-chip class="success">
+       <i class="material-icons">brightness_1</i>
+       <span>0</span>
+     </md-chip>
+   </md-chips>
+</div>
+<div class="collapse-content">
+<div class="content" ng-transclude></div>
+</div>
+<div>

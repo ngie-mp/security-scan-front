@@ -82,8 +82,11 @@ app.controller('homeController', function($scope,
       templateUrl: '/client/templates/bottom-menu.html',
       controller: 'homeController'
     }).then(function() {
-
-    }).catch(function(error) {
+      $mdToast.simple()
+            .textContent( 'name' + ' clicked!')
+            .position('top right')
+            .hideDelay(1500)
+        }).catch(function(error) {
     });
   };
 
@@ -125,9 +128,7 @@ app.directive('collapse',[function(){
       isOpen : '='
     },
     transclude: true,
-    template : '<div><div ng-click="collapse()" class="title">'+
-    '{{title}}<i class="material-icons">brightness_1</i></div><div class="collapse-content">'+
-    '<div class="content" ng-transclude></div></div><div>',
+    templateUrl : '/client/templates/collapser.html',
     link: function(scope, element, attrs){
       var isOpen = scope.isOpen ? true : false;
       var collapse_content_div = element[0].getElementsByClassName('collapse-content');
@@ -135,15 +136,15 @@ app.directive('collapse',[function(){
       if(isOpen){
         collapse_content_div[0].style.height = "0";
       }else{
-        collapse_content_div[0].style.height = "100%";
+        collapse_content_div[0].style.height = collapse_content_height+"px";
       }
       scope.collapse = function(){
         if(isOpen){
-          collapse_content_div[0].style.height = "0";
+          collapse_content_div[0].style.height = collapse_content_height+"px";
           isOpen = false;
 
         }else{
-          collapse_content_div[0].style.height = "100%";
+          collapse_content_div[0].style.height = "0";
           isOpen = true;
         }
       }
