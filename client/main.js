@@ -108,7 +108,8 @@ app.controller('homeController', function($scope,
       if(response.data.status === "success" ) {
         $scope.projectStatus = "Done, check your mail!";
         $scope.plugins = response.data.plugins;
-        $scope.pluginTotals = response.data.plugins.totals;
+        $scope.log = response.data.plugins.log;
+        $scope.pluginTotals = response.data.plugins.log;
         console.log($scope.user_email);
         console.log(response.data.plugins);
       }
