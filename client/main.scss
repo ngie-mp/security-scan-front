@@ -93,6 +93,7 @@ md-toolbar.todolist {
   margin-bottom: 0;
   .status {
     text-align: center;
+    margin: 1.2em 0;
   }
   .main-input {
     width: 60%;
@@ -218,12 +219,16 @@ md-toolbar.todolist {
 .warning {
   i {color: #E8850C;}
 }
-.success {
-  i {color: #00B233;}
+.fixable {
+  i {color: $primary;}
 }
 .collapser {
   background: $main-background;
-  margin: 0.2em 3.5em;
+  .info {
+    padding: 0.2em 0;
+    border-bottom: 1px solid #2f3640;
+    display: block;
+  }
   .title {
     padding: 0.3em 0.8em;
     border: 1px $primary solid;
@@ -260,6 +265,7 @@ md-toolbar.todolist {
     transition:0.4s all;
     background: #24292e;
     color: $text-default;
+    margin-bottom: 0.5em;
     .content {
       margin: 2em;
     }

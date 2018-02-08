@@ -78,37 +78,38 @@ app.controller('homeController', function($scope,
 
   $scope.showGridBottomSheet = function() {
     $scope.alert = '';
+
     $mdBottomSheet.show({
       templateUrl: '/client/templates/bottom-menu.html',
       controller: 'homeController'
     }).then(function() {
-      $mdToast.simple()
-            .textContent( 'name' + ' clicked!')
-            .position('top right')
-            .hideDelay(1500)
-        }).catch(function(error) {
+    }).catch(function(error) {
     });
   };
 
   $scope.showLoader = false;
   $scope.showStatus = false;
   $scope.plugins = {};
+  $scope.pluginTotals = {};
 
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
     $scope.showStatus = true;
+    $scope.projectStatus = "Analyzing your git repository..";
 
-    url = 'http://localhost/api/process', data = { "url" : $scope.git_url, },
+    url = 'http://localhost/api/process', data = {
+      "url" : $scope.git_url, "email": $scope.user_email},
         config='contenttype';
 
     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
      .then(function (response) {
       $scope.showLoader = false;
+
       if(response.data.status === "success" ) {
-        $scope.projectStatus = "Checking up you git repository..";
-        $scope.projectStatus = "Scanned finished";
+        $scope.projectStatus = "Done, check your mail!";
         $scope.plugins = response.data.plugins;
-        console.log(response.data.plugins)
+        $scope.pluginTotals = response.data.plugins.totals;
+        console.log($scope.user_email);
       }
       else {
         console.log("error");
@@ -136,11 +137,11 @@ app.directive('collapse',[function(){
       if(isOpen){
         collapse_content_div[0].style.height = "0";
       }else{
-        collapse_content_div[0].style.height = collapse_content_height+"px";
+        collapse_content_div[0].style.height = "auto";
       }
       scope.collapse = function(){
         if(isOpen){
-          collapse_content_div[0].style.height = collapse_content_height+"px";
+          collapse_content_div[0].style.height = "auto";
           isOpen = false;
 
         }else{
@@ -152,21 +153,14 @@ app.directive('collapse',[function(){
   }
 }]);
 
-app.filter('newline', function() {
-  return function(text) {
-    return text.replace('\n\r\n', "<br><br>");
-  };
-});
-
-
 app.controller('contactController', function($scope, $timeout) {
-    $scope.pageTitle = "Contact"
+    $scope.pageTitle = "Contact";
 });
 
 app.controller('projectListController', function($scope, $timeout) {
-    $scope.pageTitle = "Project list"
+    $scope.pageTitle = "Project list";
 });
 
 app.controller('loginController', function($scope, $timeout) {
-    $scope.pageTitle = "User"
+    $scope.pageTitle = "User";
 });

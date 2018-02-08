@@ -69,7 +69,8 @@ md-toolbar.todolist {
   padding: 1.5em;
   margin-bottom: 0; }
   .search .status {
-    text-align: center; }
+    text-align: center;
+    margin: 1.2em 0; }
   .search .main-input {
     width: 60%;
     height: 50px;
@@ -165,12 +166,15 @@ md-toolbar.todolist {
 .warning i {
   color: #E8850C; }
 
-.success i {
-  color: #00B233; }
+.fixable i {
+  color: #2980b9; }
 
 .collapser {
-  background: #fafbfc;
-  margin: 0.2em 3.5em; }
+  background: #fafbfc; }
+  .collapser .info {
+    padding: 0.2em 0;
+    border-bottom: 1px solid #2f3640;
+    display: block; }
   .collapser .title {
     padding: 0.3em 0.8em;
     border: 1px #2980b9 solid; }
@@ -199,7 +203,8 @@ md-toolbar.todolist {
     overflow: hidden;
     transition: 0.4s all;
     background: #24292e;
-    color: #8b989e; }
+    color: #8b989e;
+    margin-bottom: 0.5em; }
     .collapser .collapse-content .content {
       margin: 2em; }
 

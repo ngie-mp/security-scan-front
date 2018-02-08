@@ -10,7 +10,7 @@
                flex="20">
         </span>
         <input ng-model="user_email"
-               placeholder="blabla@gmail.com"
+               placeholder="yourmail@gmail.com"
                flex="80">
       </md-input-container>
       <md-input-container class="main-input"
@@ -35,15 +35,23 @@
     </div>
   </div>
   <div ng-repeat="plugin in plugins">
-   <collapse is-open=true title="{{plugin.name}}" class="{{plugin.indicator}} collapser">
-      <span>{{plugin.description}}</span>
-      <span>{{plugin.logFile}}</span>
-      <span>{{plugin.log.totals}}</span>
-      <span>{{plugin.id}}</span>
+   <collapse is-open=true title="{{plugin.name}}" class="collapser">
+     <span class="info">
+        {{plugin.description}}
+     </span>
+      <span class="info">
+        {{plugin.logFile}}
+      </span>
+      <span class="info">
+        {{plugin.log}}
+      </span>
+      <span class="info">
+        {{plugin.id}}
+      </span>
       <p ng-bind-html-unsafe="plugin.log"></p>
    </collapse>
   </div>
-  <collapse is-open=true title="Test" class="collapser">
+  <!-- <collapse is-open=true title="Test" class="collapser">
      <div class="">
        <span>Tool description : Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
        <span>{{plugin.logFile}}Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
@@ -51,7 +59,7 @@
        <span>{{plugin.id}}</span>
      </div>
      <p ng-bind-html-unsafe="plugin.log"></p>
-  </collapse>
+  </collapse> -->
   <a class="more-btn md-fab md-raised" ng-click="showGridBottomSheet()">
     <i class="material-icons">more_vert</i>
   </a>
