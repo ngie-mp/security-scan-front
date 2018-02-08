@@ -26,22 +26,6 @@ body {
     top: 25%;
     margin-right: 0.2em; }
 
-.more-btn {
-  background: #333;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  position: fixed;
-  margin: 2em 2.5em;
-  bottom: 0;
-  right: 0;
-  cursor: pointer; }
-  .more-btn i {
-    color: #fff;
-    font-size: 1.8em;
-    margin: 14px 16px; }
-
 .logo a {
   text-decoration: none; }
 .logo h1 {
@@ -208,23 +192,44 @@ md-toolbar.todolist {
     .collapser .collapse-content .content {
       margin: 2em; }
 
-.bottom-menu {
-  overflow: hidden; }
-  .bottom-menu md-bottom-sheet {
-    position: absolute;
-    padding: 0;
-    height: 120px; }
-    .bottom-menu md-bottom-sheet .md-button {
-      height: 90px;
-      padding-top: 10px; }
-    .bottom-menu md-bottom-sheet .md-grid-item-content {
-      height: 90px;
-      padding-top: 10px;
-      display: inline-block; }
-
 .md-dialog-container form {
   padding: 0.5em; }
 .md-dialog-container .paypal {
   margin-top: 1em; }
+
+md-fab-toolbar .md-fab-toolbar-wrapper {
+  padding: 0.5em 0; }
+
+.md-button.md-default-theme:not([disabled]).md-focused,
+.md-button:not([disabled]).md-focused,
+.md-button.md-default-theme:not([disabled]):hover,
+.md-button:not([disabled]):hover {
+  background-color: transparent; }
+
+md-fab-toolbar {
+  display: block;
+  position: fixed;
+  width: 100%;
+  bottom: 0; }
+  md-fab-toolbar md-toolbar {
+    background: #2980b9; }
+    md-fab-toolbar md-toolbar .item-content:hover {
+      color: #2980b9; }
+
+.more-btn {
+  background: #333 !important;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: fixed;
+  margin: 2em 2.5em;
+  bottom: 0;
+  right: 0;
+  cursor: pointer; }
+  .more-btn i {
+    color: #fff;
+    font-size: 1.8em;
+    margin: 14px 1px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -110,6 +110,7 @@ app.controller('homeController', function($scope,
         $scope.plugins = response.data.plugins;
         $scope.pluginTotals = response.data.plugins.totals;
         console.log($scope.user_email);
+        console.log(response.data.plugins);
       }
       else {
         console.log("error");
