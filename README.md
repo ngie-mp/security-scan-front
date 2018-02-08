@@ -20,5 +20,5 @@ meteor npm install
 ### Run meteor local server
 
 ```
-meteor npm install
+meteor
 ```
