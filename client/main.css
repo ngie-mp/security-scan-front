@@ -162,8 +162,11 @@ md-toolbar.todolist {
     padding: 0.6em 0.8em;
     border-bottom: 1px solid #2f3640;
     display: block; }
+  .collapser .desc {
+    font-style: italic; }
   .collapser .totals-tools {
-    padding-left: 1em; }
+    padding-left: 1em;
+    text-align: right; }
     .collapser .totals-tools i {
       line-height: 20px; }
     .collapser .totals-tools span {
