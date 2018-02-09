@@ -156,7 +156,7 @@ app.directive('collapse',[function(){
 }]);
 
 app.controller('contactController', function($scope, $timeout) {
-    $scope.pageTitle = "Contact";
+    $scope.pageTitle = "Contacts";
 });
 
 app.controller('projectListController', function($scope, $timeout) {
