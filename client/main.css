@@ -158,12 +158,16 @@ md-toolbar.todolist {
 
 .collapser {
   background: #fafbfc; }
+  .collapser .file {
+    color: #8ea0ff; }
   .collapser .info {
     padding: 0.6em 0.8em;
     border-bottom: 1px solid #2f3640;
     display: block; }
   .collapser .desc {
     font-style: italic; }
+  .collapser .log-msg {
+    color: #87888e; }
   .collapser .totals-tools {
     padding-left: 1em;
     text-align: right; }

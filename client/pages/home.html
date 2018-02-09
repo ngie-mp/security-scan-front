@@ -43,7 +43,7 @@
             <i class="material-icons">folder</i>{{plugin.logFile}}
          </span>
          <span class="info">
-          {{plugin.log}}
+           {{plugin.logMessage}}
          </span>
        </div>
        <div layout="row" flex="30">
@@ -59,13 +59,12 @@
        </div>
      </div>
      <div ng-repeat="(key, files) in plugin.log.files">
-       <span class="info" flex="33">
-         <i class="material-icons">insert_drive_file</i>
-         <span>
-           {{key}}
-         </span>
-         <div ng-repeat="msg in files.messages">
-           {{msg.message}}
+       <span class="info file" flex="33">
+         <i class="material-icons">insert_drive_file</i>{{key}}
+         <div>
+           <span ng-repeat="msg in files.messages" class="info log-msg">
+             {{msg.message}}
+           </span>
          </div>
        </span>
      </div>
