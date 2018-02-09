@@ -160,6 +160,8 @@ md-toolbar.todolist {
   background: #fafbfc; }
   .collapser .file {
     color: #8ea0ff; }
+    .collapser .file .error {
+      color: #E83A5E; }
   .collapser .info {
     padding: 0.6em 0.8em;
     border-bottom: 1px solid #2f3640;

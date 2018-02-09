@@ -214,6 +214,11 @@ md-toolbar.todolist {
   background: $main-background;
   .file {
     color: #8ea0ff;
+    .error {
+      color: #E83A5E;
+      i {
+      }
+    }
   }
   .info {
     padding: 0.6em 0.8em;

@@ -40,7 +40,7 @@
        <div flex="70">
          <span class="info desc">{{plugin.description}}</span>
          <span class="info">
-            <i class="material-icons">folder</i>{{plugin.logFile}}
+            <i class="material-icons">folder</i><span>{{plugin.logFile}}</span>
          </span>
          <span class="info">
            {{plugin.logMessage}}
@@ -60,7 +60,10 @@
      </div>
      <div ng-repeat="(key, files) in plugin.log.files">
        <span class="info file" flex="33">
-         <i class="material-icons">insert_drive_file</i>{{key}}
+         <i class="material-icons">insert_drive_file</i><span>{{key}}</span>
+         <span class="error">
+           <i class="material-icons">error</i>{{plugin.log.files[key].errors}}
+         </span>
          <div>
            <span ng-repeat="msg in files.messages" class="info log-msg">
              {{msg.message}}

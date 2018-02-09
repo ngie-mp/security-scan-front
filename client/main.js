@@ -108,8 +108,6 @@ app.controller('homeController', function($scope,
       if(response.data.status === "success" ) {
         $scope.projectStatus = "Done, check your mail!";
         $scope.plugins = response.data.plugins;
-        console.log($scope.files);
-        console.log(response.data.plugins);
       }
       else {
         console.log("error");
