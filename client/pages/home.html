@@ -35,61 +35,40 @@
     </div>
   </div>
   <div ng-repeat="plugin in plugins">
-   <collapse is-open=true title="{{plugin.name}}" class="collapser">
-     <span class="info">
-        {{plugin.description}}
-     </span>
-      <span class="info">
-        Errors encoutered on the following files: {{plugin.logFile}}
-      </span>
-      <span class="info">
-        {{plugin.log.files}}
-      </span>
-      <span class="info">
-        {{plugin.log.totals.errors}}
-        {{plugin.log.totals.warnings}}
-        {{plugin.log.totals.fixable}}
-      </span>
-      <span class="info">
-        {{plugin.id}}
-      </span>
+   <collapse is-open=false title="{{plugin.name}}" class="collapser">
+     <div layout="row">
+       <div flex="70">
+         <span class="info desc">{{plugin.description}}</span>
+         <span class="info">
+            <i class="material-icons">folder</i>{{plugin.logFile}}
+         </span>
+         <span class="info">
+          {{plugin.log}}
+         </span>
+       </div>
+       <div layout="row" flex="30">
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">build</i><span>{{plugin.log.totals.fixable}}</span>
+         </span>
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">warning</i><span>{{plugin.log.totals.warnings}}</span>
+         </span>
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">error</i><span>{{plugin.log.totals.errors}}</span>
+         </span>
+       </div>
+     </div>
+     <div ng-repeat="(key, files) in plugin.log.files">
+       <span class="info" flex="33">
+         <i class="material-icons">insert_drive_file</i>
+         <span>
+           {{key}}
+         </span>
+         <div ng-repeat="msg in files.messages">
+           {{msg.message}}
+         </div>
+       </span>
+     </div>
    </collapse>
   </div>
-  <collapse is-open=false title="Test" class="collapser">
-    <div layout="row">
-      <div flex="70">
-        <span class="info">
-           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
-        </span>
-        <span class="info">
-           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
-        </span>
-        <span class="info">
-           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
-        </span>
-      </div>
-      <div layout="row" flex="30">
-        <span class="info totals-tools" flex="33">
-          <i class="material-icons">build</i><span>40</span>
-        </span>
-        <span class="info totals-tools" flex="33">
-          <i class="material-icons">warning</i><span>54</span>
-        </span>
-        <span class="info totals-tools" flex="33">
-          <i class="material-icons">error</i><span>59</span>
-        </span>
-      </div>
-    </div>
-    <div>
-      <span class="info" flex="33">
-        <i class="material-icons">bug_report</i>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quo
-          ullam vel sequi? Sunt eaque doloremque voluptatum reprehenderit, natus,
-          porro nulla itaque nesciunt optio veritatis quisquam, expedita voluptate
-          magni error.
-        </span>
-      </span>
-    </div>
-  </collapse>
 </div>
