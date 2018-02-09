@@ -1,10 +1,76 @@
-<div layout="column" layout-align="center center">
-  <md-input-container>
-    <label>Enter your .git project URL</label>
-    <input ng-model="user.title">
-  </md-input-container>
-  <div class="scan-icon" layout-align="center">
-    <img src="icons/scan.svg" alt="Security scan">
+<div layout="column" class="home">
+  <div class="search">
+    <div layout="column">
+      <md-input-container class="main-input"
+                          md-no-float
+                          layout="row">
+        <span class="git-logo" flex="20" layout-align="center center">
+          <img src="icons/letter-envelope.svg"
+               alt="PHP security scan"
+               flex="20">
+        </span>
+        <input ng-model="user_email"
+               placeholder="yourmail@gmail.com"
+               flex="80">
+      </md-input-container>
+      <md-input-container class="main-input"
+                          md-no-float
+                          layout="row">
+        <span class="git-logo" flex="20" layout-align="center center">
+          <img src="icons/github-big-logo.svg"
+               alt="PHP security scan"
+               flex="20">
+        </span>
+        <input ng-model="git_url"
+               placeholder="purifyphp/purifyphp.git"
+               flex="80">
+      </md-input-container>
+      <md-progress-linear md-mode="determinated" ng-disabled="!showLoader"></md-progress-linear>
+      <div class="status" ng-if="showStatus">
+        <span>
+          {{ projectStatus }}
+        </span>
+      </div>
+      <md-button ng-click="sendGitUrl()">Go and Scan</md-button>
+    </div>
   </div>
-  <md-button class="md-primary">Primary Button</md-button>
+  <div ng-repeat="plugin in plugins">
+   <collapse is-open=true title="{{plugin.name}}" class="collapser">
+     <div layout="row">
+       <div flex="70">
+         <span class="info desc">{{plugin.description}}</span>
+         <span class="info">
+            <i class="material-icons">folder</i><span>{{plugin.logFile}}</span>
+         </span>
+         <span class="info">
+           {{plugin.logMessage}}
+         </span>
+       </div>
+       <div layout="row" flex="30">
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">build</i><span>{{plugin.log.totals.fixable}}</span>
+         </span>
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">warning</i><span>{{plugin.log.totals.warnings}}</span>
+         </span>
+         <span class="info totals-tools" flex="33">
+           <i class="material-icons">error</i><span>{{plugin.log.totals.errors}}</span>
+         </span>
+       </div>
+     </div>
+     <div ng-repeat="(key, files) in plugin.log.files">
+       <span class="info file" flex="33">
+         <i class="material-icons">insert_drive_file</i><span>{{key}}</span>
+         <span class="error">
+           <i class="material-icons">error</i>{{plugin.log.files[key].errors}}
+         </span>
+         <div>
+           <span ng-repeat="msg in files.messages" class="info log-msg">
+             {{msg.message}}
+           </span>
+         </div>
+       </span>
+     </div>
+   </collapse>
+  </div>
 </div>

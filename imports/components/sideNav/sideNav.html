@@ -1,18 +1,26 @@
-<md-content class="side-nav" layout-margin>
-  <md-button href="/home" class="btn">
-    <i class="material-icons">account_circle</i>
-    <span>My account</span>
-  </md-button > <br>
-  <md-button href="/" class="btn">
-    <i class="material-icons">scanner</i>
-    <span>Scanned <br>projects</span>
-  </md-button><br>
-  <md-button href="/list" class="btn">
-      <i class="material-icons">perm_contact_calendar</i>
-      <span>Contacts</span>
-  </md-button> <br>
-  <md-button href="/" class="btn">
-      <i class="material-icons">settings</i>
-      <span>Settings</span>
-  </md-button>
-</md-content>
+<div ng-controller="homeController">
+  <md-sidenav class="md-sidenav-left" md-component-id="left"
+              md-disable-backdrop md-whiteframe="4">
+    <md-content class="side-nav">
+      <md-button ng-click="toggleLeft()" class="close-btn">
+        <i class="material-icons">close</i>
+      </md-button>
+      <md-button href="/login" class="btn">
+        <i class="material-icons">account_circle</i>
+        <span>My account</span>
+      </md-button> <br>
+      <md-button href="/project-list" class="btn">
+        <i class="material-icons">scanner</i>
+        <span>Scanned <br>projects</span>
+      </md-button><br>
+      <md-button href="/contact-list" class="btn">
+          <i class="material-icons">perm_contact_calendar</i>
+          <span>Contacts</span>
+      </md-button> <br>
+      <md-button href="/settings" class="btn">
+          <i class="material-icons">settings</i>
+          <span>Settings</span>
+      </md-button>
+    </md-content>
+  </md-sidenav>
+</div>

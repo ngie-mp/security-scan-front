@@ -3,22 +3,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="client/favicon.ico">
   <base href="/">
 </head>
 <body ng-app="scanApp">
-  <div layout="row">
-    <!-- <div class="menu">
-      <a href="/"><i class="material-icons">menu</i></a>
-    </div> -->
-    <side-nav md-whiteframe="4"></side-nav>
+  <div layout="column" ng-controller="homeController">
+    <side-nav></side-nav>
     <div class="container" flex="100" layout="column">
-      <md-toolbar class="md-tall main logo">
-        <span class="logo" layout="row" layout-align="center">
-          <h1>PHP projects security scan</h1>
-          <i class="material-icons">security</i>
+      <md-toolbar class="main logo" layout="row">
+        <div class="menu-button" flex="20">
+          <a ng-click="toggleLeft()"><i class="material-icons">menu</i></a>
+        </div>
+        <span class="logo" flex="60">
+          <a href="/"><h1>Security scan <i class="material-icons">security</i></h1></a>
+        </span>
+        <span class="donate-button" flex="20">
+          <a ng-click="showDonateMethod($event)">
+            <i class="material-icons">local_atm</i>Pay a coffee!
+          </a>
         </span>
       </md-toolbar>
       <div ng-view></div>
     </div>
+    <md-fab-toolbar md-direction="left">
+      <md-fab-trigger>
+        <md-button class="more-btn md-fab md-raised">
+          <i class="material-icons">more_vert</i>
+        </md-button>
+      </md-fab-trigger>
+      <md-toolbar>
+       <md-fab-actions>
+         <div layout="row" layout-align="space-around center">
+           <md-button class="item-content" ng-href="/contact-list">
+             <i class="material-icons">send</i>
+             <div class="md-grid-text">Send </div>
+           </md-button>
+           <md-button class="item-content">
+             <i class="material-icons">file_download</i>
+             <div class="md-grid-text"> Download</div>
+           </md-button>
+           <md-button class="item-content" ng-href="/project-list">
+             <i class="material-icons">create_new_folder</i>
+             <div class="md-grid-text">+ projects</div>
+           </md-button>
+           <md-button class="item-content" ng-href="/">
+             <i class="material-icons">update</i>
+             <div class="md-grid-text">Re-scan</div>
+           </md-button>
+         </div>
+       </md-fab-actions>
+      </md-toolbar>
+    </md-fab-toolbar>
   </div>
 </body>

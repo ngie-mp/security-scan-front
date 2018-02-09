@@ -1,0 +1,346 @@
+$main-border-radius: 5px;
+$main-background: #fafbfc;
+$main-light: #fafafa;
+$alert-background: #C2185B;
+$primary: #2980b9;
+$default: #435259;
+$text-default: #8b989e;
+$text-primary: #1ab188;
+$text-highlight: $primary;
+
+body {
+  background: $main-background;
+  height: auto !important;
+}
+
+.menu-button {
+  margin: 1em 0;
+  cursor: pointer;
+  i {
+    color: $primary;
+    font-size: 1.8em;
+  }
+}
+.donate-button {
+  margin: 1.2em 0.2em;
+  cursor: pointer;
+  color:  #586069;
+  text-align: right;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 0.8em;
+  i {
+    color: $primary;
+    font-size: 1.6em;
+    height: 20px;
+		line-height: 20px;
+		position: relative;
+		top: 25%;
+    margin-right: 0.2em;
+  }
+}
+
+.logo {
+  a {
+    text-decoration: none;
+  }
+  h1{
+    color: #fff;
+    font-weight: 100;
+    text-align: center;
+    font-size: 1.7em;
+    margin: 0.4em 0 0 0;
+  }
+}
+
+i.logo {
+  color: $text-primary;
+  line-height: 2;
+}
+
+md-toolbar.main {
+  background: #3c4146;
+  border-bottom: 1px solid #D4D4D4;
+  padding: 0 1em;
+  height: 72px;
+}
+
+md-toolbar.todolist {
+  background: $primary;
+}
+
+.project-list {
+  .md-button {
+    margin-top: 2em;
+  }
+}
+
+.search {
+  margin: 2em;
+  padding: 1.5em;
+  margin-bottom: 0;
+  .status {
+    text-align: center;
+    margin: 1.2em 0;
+  }
+  .main-input {
+    width: 60%;
+    height: 50px;
+    margin-bottom: 0;
+    margin-top: 1em;
+    margin: 0.5em auto 0 auto;
+    background: $main-light;
+    padding: 0;
+    border: 1px solid $primary;
+    .git-logo {
+      background: $primary;
+      display: block;
+      img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 0.5em;
+      }
+    }
+    input {
+     margin-bottom: 0;
+     height: 60px !important;
+     border: 0;
+     border-style: none;
+     border-width: 0 !important;
+     border-color: white;
+   }
+  }
+}
+
+.main-input:focus {
+  text-align: center;
+}
+.main-input input::placeholder {
+  padding-left: 0.5em;
+}
+.main-input input:focus {
+  border: none !important;
+}
+.md-button span {
+ display: block;
+ font-size: 0.80em;
+ line-height: 1.5;
+}
+
+.scan-icon {
+  img {
+    width: 10%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2.5em;
+  }
+}
+
+.home {
+  padding: 2em 8em;
+  .md-button {
+    background: $primary;
+    color: #FFF;
+    margin: 0 auto;
+    border-radius: 0px;
+    height: 50px;
+    width: 20%;
+  }
+  md-progress-linear {
+   width: 60%;
+   margin: 0 auto;
+   padding-bottom: 1.5em;
+   .md-container {
+     background: #6d6d6d;
+   }
+   .md-bar {
+     background-color: rgba(52, 152, 219,0.8);
+   }
+ }
+}
+
+.md-sidenav-left {
+  max-width: 140px !important;
+  .side-nav {
+    .close-btn {
+      width: 140px;
+      border-bottom: 1px #d4d4d4 solid;
+      margin:1.5em 0;
+      padding-bottom: 0.8em;
+      &:hover {
+        background: transparent;
+        color: #333;
+      }
+      i {
+        color: #3c4146;
+      }
+    }
+    .btn {
+      margin: 45px 0;
+      color: $text-default;
+      display: block;
+      &:hover {
+        background: transparent;
+        color: $primary;
+      }
+      i {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.status{
+  span{
+    color: $text-default;
+    font-size: 1.2em;
+  }
+
+}
+
+/* collapser */
+.error {
+  i {color: #E83A5E;}
+}
+.warning {
+  i {color: #E8850C;}
+}
+.fixable {
+  i {color: $primary;}
+}
+.collapser {
+  background: $main-background;
+  .file {
+    color: #8ea0ff;
+    .error {
+      color: #E83A5E;
+      i {
+      line-height: 33px;
+      margin-left: 0.5em;
+      }
+      span {
+        line-height: 33px;
+        display: block;
+        margin: 0 0.2em;
+      }
+    }
+  }
+  .info {
+    padding: 0.6em 0.8em;
+    border-bottom: 1px solid #2f3640;
+    display: block;
+  }
+  .desc {
+    font-style: italic;
+  }
+  .log-msg {
+    color: #87888e;
+  }
+  .totals-tools {
+    padding-left: 1em;
+    text-align: right;
+    i {
+      line-height: 20px;
+    }
+    span {
+      display: block;
+      padding-left: 0.2em;
+    }
+  }
+  .title {
+    padding: 0.3em 0.8em;
+    border: 1px $primary solid;
+    span {
+      display: block;
+      margin: 1em;
+    }
+	  i {
+		line-height: 20px;
+    float: right;
+    margin-right: 0.5em;
+	  }
+    .md-chips{
+      box-shadow:0 0;
+      md-chip {
+        float: right;
+        padding: 0 5px;
+        i {
+    		line-height: 33px;
+        margin-left: 0.5em;
+        float: right;
+    	  }
+        span {
+          line-height: 33px;
+          display: block;
+          float: left;
+          margin: 0 0.2em;
+        }
+      }
+    }
+  }
+  .collapse-content{
+    overflow:hidden;
+    transition:0.4s all;
+    background: #24292e;
+    color: $text-default;
+    margin-bottom: 0.5em;
+    .content {
+      margin: 2em;
+    }
+  }
+}
+
+.md-dialog-container {
+  form {
+    padding: 0.5em;
+  }
+  .paypal {
+    margin-top: 1em;
+  }
+}
+
+md-fab-toolbar .md-fab-toolbar-wrapper {
+  padding: 0.5em 0;
+}
+
+.md-button.md-default-theme:not([disabled]).md-focused,
+.md-button:not([disabled]).md-focused,
+.md-button.md-default-theme:not([disabled]):hover,
+.md-button:not([disabled]):hover {
+    background-color: transparent;
+}
+
+md-fab-toolbar {
+  display: block;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  md-toolbar {
+    background: $primary;
+    .item-content {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.more-btn {
+  background: #333 !important;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: fixed;
+  margin: 2em 2.5em;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  i {
+    color : #fff;
+    font-size: 1.8em;
+    margin: 14px 1px;
+  }
+}
