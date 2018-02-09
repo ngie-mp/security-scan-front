@@ -2,8 +2,8 @@
   <div class="search">
     <div layout="column">
       <md-input-container class="main-input"
-                                md-no-float
-                                layout="row">
+                          md-no-float
+                          layout="row">
         <span class="git-logo" flex="20" layout-align="center center">
           <img src="icons/letter-envelope.svg"
                alt="PHP security scan"
@@ -53,45 +53,43 @@
       <span class="info">
         {{plugin.id}}
       </span>
-      <p ng-bind-html-unsafe="plugin.log"></p>
    </collapse>
   </div>
-  <!-- <collapse is-open=true title="Test" class="collapser">
-     <div class="">
-       <span>Tool description : Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-       <span>{{plugin.logFile}}Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-       <span>{{plugin.log.totals}}</span>
-       <span>{{plugin.id}}</span>
-     </div>
-     <p ng-bind-html-unsafe="plugin.log"></p>
-  </collapse> -->
+  <collapse is-open=false title="Test" class="collapser">
+    <div layout="row">
+      <div flex="70">
+        <span class="info">
+           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
+        </span>
+        <span class="info">
+           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
+        </span>
+        <span class="info">
+           <i class="material-icons">description</i> /Users/ngie-mp/workspace/security-scan-front
+        </span>
+      </div>
+      <div layout="row" flex="30">
+        <span class="info totals-tools" flex="33">
+          <i class="material-icons">build</i><span>40</span>
+        </span>
+        <span class="info totals-tools" flex="33">
+          <i class="material-icons">warning</i><span>54</span>
+        </span>
+        <span class="info totals-tools" flex="33">
+          <i class="material-icons">error</i><span>59</span>
+        </span>
+      </div>
+    </div>
+    <div>
+      <span class="info" flex="33">
+        <i class="material-icons">bug_report</i>
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quo
+          ullam vel sequi? Sunt eaque doloremque voluptatum reprehenderit, natus,
+          porro nulla itaque nesciunt optio veritatis quisquam, expedita voluptate
+          magni error.
+        </span>
+      </span>
+    </div>
+  </collapse>
 </div>
-<md-fab-toolbar md-direction="left">
-  <md-fab-trigger>
-    <md-button class="more-btn md-fab md-raised">
-      <i class="material-icons">more_vert</i>
-    </md-button>
-  </md-fab-trigger>
-  <md-toolbar>
-   <md-fab-actions>
-     <div layout="row" layout-align="space-around center">
-       <md-button class="item-content">
-         <i class="material-icons">send</i>
-         <div class="md-grid-text">Send </div>
-       </md-button>
-       <md-button class="item-content">
-         <i class="material-icons">file_download</i>
-         <div class="md-grid-text"> Download</div>
-       </md-button>
-       <md-button class="item-content">
-         <i class="material-icons">visibility</i>
-         <div class="md-grid-text">+ details</div>
-       </md-button>
-       <md-button class="item-content">
-         <i class="material-icons">update</i>
-         <div class="md-grid-text">Re-scan</div>
-       </md-button>
-     </div>
-   </md-fab-actions>
-  </md-toolbar>
-</md-fab-toolbar>
