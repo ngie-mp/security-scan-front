@@ -90,7 +90,7 @@ app.controller('homeController', function($scope,
   $scope.showLoader = false;
   $scope.showStatus = false;
   $scope.plugins = {};
-  $scope.pluginTotals = {};
+  $scope.files = {};
 
   $scope.sendGitUrl = function sendGitUrl() {
     $scope.showLoader = true;
@@ -98,19 +98,17 @@ app.controller('homeController', function($scope,
     $scope.projectStatus = "Analyzing your git repository..";
 
     url = 'http://localhost/api/process', data = {
-      "url" : $scope.git_url, "email": $scope.user_email},
+      "url" : $scope.git_url, "emails": $scope.user_email},
         config='contenttype';
 
     $http.post(url, data, config, {'Access-Control-Allow-Origin':'*'})
-     .then(function (response) {
+     .then(function(response) {
       $scope.showLoader = false;
 
       if(response.data.status === "success" ) {
         $scope.projectStatus = "Done, check your mail!";
         $scope.plugins = response.data.plugins;
-        $scope.log = response.data.plugins.log;
-        $scope.pluginTotals = response.data.plugins.log;
-        console.log($scope.user_email);
+        console.log($scope.files);
         console.log(response.data.plugins);
       }
       else {
@@ -157,10 +155,14 @@ app.directive('collapse',[function(){
 
 app.controller('contactController', function($scope, $timeout) {
     $scope.pageTitle = "Contacts";
+
 });
 
 app.controller('projectListController', function($scope, $timeout) {
     $scope.pageTitle = "Project list";
+    $scope.reScan = function() {
+      console.log('blim');
+    }
 });
 
 app.controller('loginController', function($scope, $timeout) {

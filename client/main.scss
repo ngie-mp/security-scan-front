@@ -217,8 +217,12 @@ md-toolbar.todolist {
     border-bottom: 1px solid #2f3640;
     display: block;
   }
+  .desc {
+    font-style: italic;
+  }
   .totals-tools {
     padding-left: 1em;
+    text-align: right;
     i {
       line-height: 20px;
     }
