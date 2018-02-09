@@ -162,6 +162,13 @@ md-toolbar.todolist {
     color: #8ea0ff; }
     .collapser .file .error {
       color: #E83A5E; }
+      .collapser .file .error i {
+        line-height: 33px;
+        margin-left: 0.5em; }
+      .collapser .file .error span {
+        line-height: 33px;
+        display: block;
+        margin: 0 0.2em; }
   .collapser .info {
     padding: 0.6em 0.8em;
     border-bottom: 1px solid #2f3640;

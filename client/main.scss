@@ -217,6 +217,13 @@ md-toolbar.todolist {
     .error {
       color: #E83A5E;
       i {
+      line-height: 33px;
+      margin-left: 0.5em;
+      }
+      span {
+        line-height: 33px;
+        display: block;
+        margin: 0 0.2em;
       }
     }
   }
