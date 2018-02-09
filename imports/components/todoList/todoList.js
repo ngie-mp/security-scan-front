@@ -8,17 +8,18 @@ class TodosListCtrl {
   constructor() {
     this.tasks = [{
       what: 'project-mvc',
-      who: '/user/php-project.git',
+      who: 'https://github.com/Yandevweb/mymvc.git',
       notes: 'description/issues'
     }, {
       what: 'laravel',
-      who: '/user/php-project.git',
+      who: 'https://github.com/Yandevweb/mymvc.git',
       notes: 'description/issues'
     }, {
       what: 'symfony',
-      who: '/user/php-project.git',
+      who: 'https://github.com/Yandevweb/mymvc.git',
       notes: 'description/issues'
     }];
+
   }
 }
 
