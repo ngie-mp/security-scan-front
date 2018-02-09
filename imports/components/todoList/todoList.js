@@ -7,16 +7,16 @@ import template from './todoList.html';
 class TodosListCtrl {
   constructor() {
     this.tasks = [{
-      what: 'project one',
-      who: 'URL',
+      what: 'project-mvc',
+      who: '/user/php-project.git',
       notes: 'description/issues'
     }, {
-      what: 'project two',
-      who: 'URL',
+      what: 'laravel',
+      who: '/user/php-project.git',
       notes: 'description/issues'
     }, {
-      what: 'project three',
-      who: 'URL',
+      what: 'symfony',
+      who: '/user/php-project.git',
       notes: 'description/issues'
     }];
   }
